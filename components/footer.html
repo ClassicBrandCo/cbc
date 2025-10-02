@@ -1,21 +1,108 @@
-<footer class="bg-black text-gray-300 mt-12">
-  <div class="max-w-6xl mx-auto px-6 py-10 grid md:grid-cols-3 gap-6">
-    <div>
-      <h3 class="text-xl font-semibold text-white">Classic Brand</h3>
-      <p class="mt-2 text-sm">Matugga Center (near Lwadda School)<br/>T-shirt printing • Embroidery • Labeling • Digitizing</p>
+<!-- components/footer.html -->
+<footer class="bg-black text-gray-300 mt-16">
+  <div class="max-w-6xl mx-auto px-6 py-12 grid md:grid-cols-3 gap-8">
+    <!-- Brand Information -->
+    <div class="space-y-4">
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12 bg-yellow-400 rounded-lg flex items-center justify-center">
+          <i class="fas fa-tshirt text-black text-xl"></i>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold text-white">Classic Brand Co</h3>
+          <p class="text-sm opacity-80">Quality Since 2024</p>
+        </div>
+      </div>
+      <p class="text-sm leading-relaxed text-gray-400">
+        Professional embroidery, printing, and labeling services.
+        Transforming your brand vision into high-quality finished products.
+      </p>
+      <div class="text-sm text-gray-500">
+        <p>📍 Matugga Center (near Lwadda School)</p>
+        <p>🕒 Mon-Sat: 8:00 AM - 6:00 PM</p>
+      </div>
     </div>
-    <div>
-      <h4 class="font-semibold">Contact</h4>
-      <p>WhatsApp: <a href="https://wa.me/256785475049" class="hover:underline">0785475049</a></p>
-      <p>Call: <a href="tel:+256759921866" class="hover:underline">0759921866</a></p>
+
+    <!-- Contact Information -->
+    <div class="space-y-4">
+      <h4 class="font-semibold text-white text-lg mb-4">Get In Touch</h4>
+      <div class="space-y-3">
+        <a href="https://wa.me/256785475049"
+          class="flex items-center gap-3 hover:text-yellow-400 transition-colors group">
+          <div
+            class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center group-hover:bg-green-600 transition-colors">
+            <i class="fab fa-whatsapp text-white"></i>
+          </div>
+          <div>
+            <div class="font-medium">WhatsApp</div>
+            <div class="text-sm text-gray-400">+256 785 475 049</div>
+          </div>
+        </a>
+
+        <a href="tel:+256759921866" class="flex items-center gap-3 hover:text-yellow-400 transition-colors group">
+          <div
+            class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center group-hover:bg-blue-600 transition-colors">
+            <i class="fas fa-phone text-white"></i>
+          </div>
+          <div>
+            <div class="font-medium">Phone Call</div>
+            <div class="text-sm text-gray-400">+256 759 921 866</div>
+          </div>
+        </a>
+
+        <div class="flex items-center gap-3 text-gray-400">
+          <div class="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center">
+            <i class="fas fa-envelope text-white"></i>
+          </div>
+          <div>
+            <div class="font-medium">Email</div>
+            <div class="text-sm">info@classicbrand.co</div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div>
-      <h4 class="font-semibold">Follow</h4>
-      <div class="flex gap-3 mt-2">
-        <a href="#" class="hover:text-white"><i class="fab fa-facebook fa-lg"></i></a>
-        <a href="#" class="hover:text-white"><i class="fab fa-instagram fa-lg"></i></a>
+
+    <!-- Quick Links & Social -->
+    <div class="space-y-4">
+      <h4 class="font-semibold text-white text-lg mb-4">Quick Links</h4>
+      <div class="grid grid-cols-2 gap-2 text-sm">
+        <a href="./index.html" class="hover:text-yellow-400 transition-colors py-1">Home</a>
+        <a href="./index.html#services" class="hover:text-yellow-400 transition-colors py-1">Services</a>
+        <a href="./index.html#portfolio" class="hover:text-yellow-400 transition-colors py-1">Portfolio</a>
+        <a href="./contact.html" class="hover:text-yellow-400 transition-colors py-1">Contact</a>
+      </div>
+
+      <div class="pt-4">
+        <h5 class="font-semibold text-white mb-3">Follow Us</h5>
+        <div class="flex gap-3">
+          <a href="#"
+            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-yellow-400 hover:text-black transition-all duration-200">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#"
+            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-yellow-400 hover:text-black transition-all duration-200">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#"
+            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-yellow-400 hover:text-black transition-all duration-200">
+            <i class="fab fa-tiktok"></i>
+          </a>
+        </div>
       </div>
     </div>
   </div>
-  <div class="text-center py-4 bg-gray-900 text-sm">© <span id="year"></span> Classic Brand. All rights reserved.</div>
+
+  <!-- Copyright -->
+  <div class="border-t border-gray-800">
+    <div class="max-w-6xl mx-auto px-6 py-6">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+        <div>
+          © <span id="year"></span> Classic Brand Co. All rights reserved.
+        </div>
+        <div class="flex gap-6">
+          <a href="#" class="hover:text-yellow-400 transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-yellow-400 transition-colors">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </footer>

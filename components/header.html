@@ -1,28 +1,59 @@
-<header class="bg-gradient-to-r from-indigo-900 via-purple-700 to-black text-white fixed w-full z-40">
+<!-- components/header.html -->
+<header class="bg-gradient-to-r from-indigo-900 via-purple-700 to-black text-white fixed w-full z-40 shadow-lg">
   <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-    <a href="/" class="flex items-center gap-3">
-      <img src="/assets/img/logo-placeholder.svg" alt="Logo" class="h-10 w-10"/>
+    <!-- Logo -->
+    <a href="./index.html" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+      <div class="w-10 h-10 bg-yellow-400 rounded-lg flex items-center justify-center shadow-md">
+        <i class="fas fa-tshirt text-black text-lg"></i>
+      </div>
       <div>
-        <h1 class="text-lg font-bold">Classic Brand</h1>
-        <p class="text-xs opacity-80">Embroidery · Printing · Digitizing · Labeling</p>
+        <h1 class="text-lg font-bold tracking-tight">Classic Brand Co</h1>
+        <p class="text-xs opacity-80 tracking-wide">Embroidery · Printing · Labeling</p>
       </div>
     </a>
-    <nav>
-      <button id="mobile-menu-toggle" class="md:hidden p-2 inline-block"><i class="fas fa-bars"></i></button>
-      <ul id="nav-links" class="hidden md:flex gap-4 items-center text-sm">
-        <li><a href="/index.html" class="hover:underline">Home</a></li>
-        <li><a href="/index.html#services" class="hover:underline">Services</a></li>
-        <li><a href="/index.html#portfolio" class="hover:underline">Portfolio</a></li>
-        <li><a href="/contact.html" class="bg-yellow-400 text-black px-3 py-2 rounded">Contact</a></li>
-      </ul>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+      <a href="./index.html" class="hover:text-yellow-400 transition-colors duration-200 py-2">Home</a>
+      <a href="./index.html#services" class="hover:text-yellow-400 transition-colors duration-200 py-2">Services</a>
+      <a href="./index.html#portfolio" class="hover:text-yellow-400 transition-colors duration-200 py-2">Portfolio</a>
+      <a href="./contact.html"
+        class="bg-yellow-400 text-black px-4 py-2 rounded-lg hover:bg-yellow-500 transition-all duration-200 font-semibold shadow-md hover:shadow-lg">
+        Contact Us
+      </a>
     </nav>
+
+    <!-- Mobile Menu Toggle -->
+    <button id="mobile-menu-toggle" class="md:hidden p-2 text-white hover:bg-white/10 rounded-lg transition-colors">
+      <i class="fas fa-bars text-lg"></i>
+    </button>
   </div>
-  <div id="mobile-menu" class="md:hidden hidden bg-black/90">
-    <div class="px-4 py-3 flex flex-col gap-2">
-      <a href="/index.html">Home</a>
-      <a href="/index.html#services">Services</a>
-      <a href="/index.html#portfolio">Portfolio</a>
-      <a href="/contact.html" class="bg-yellow-400 text-black px-3 py-2 rounded">Contact</a>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="md:hidden hidden bg-black/95 backdrop-blur-sm border-t border-white/10">
+    <div class="px-4 py-4 flex flex-col gap-1">
+      <a href="./index.html" class="py-3 px-4 hover:bg-white/10 rounded-lg transition-colors flex items-center">
+        <i class="fas fa-home mr-3 w-5 text-center"></i>
+        Home
+      </a>
+      <a href="./index.html#services"
+        class="py-3 px-4 hover:bg-white/10 rounded-lg transition-colors flex items-center">
+        <i class="fas fa-concierge-bell mr-3 w-5 text-center"></i>
+        Services
+      </a>
+      <a href="./index.html#portfolio"
+        class="py-3 px-4 hover:bg-white/10 rounded-lg transition-colors flex items-center">
+        <i class="fas fa-images mr-3 w-5 text-center"></i>
+        Portfolio
+      </a>
+      <a href="./contact.html"
+        class="bg-yellow-400 text-black py-3 px-4 rounded-lg font-semibold text-center mt-2 hover:bg-yellow-500 transition-colors flex items-center justify-center">
+        <i class="fas fa-envelope mr-2"></i>
+        Contact Us
+      </a>
     </div>
   </div>
 </header>
+
+<!-- Spacer for fixed header -->
+<div class="h-16"></div>
