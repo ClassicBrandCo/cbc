@@ -1,79 +1,158 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Classic Brand — Embroidery • Printing • Digitizing • Labeling</title>
-  <meta name="description" content="Classic Brand — Embroidery, printing, digitizing and labeling services in Matugga Center." />
+  <meta name="description"
+    content="Classic Brand — Professional embroidery, printing, digitizing and labeling services in Matugga Center. Quality T-shirt printing and custom branding." />
   <meta property="og:title" content="Classic Brand — Embroidery & Printing" />
-  <meta property="og:image" content="/assets/img/og-image.png" />
+  <meta property="og:description"
+    content="Premium embroidery, printing, labeling & digitizing services from Matugga Center." />
+  <meta property="og:image" content="./assets/img/og-image.png" />
+
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <link rel="stylesheet" href="/assets/css/style.css" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              yellow: '#f6c14e',
+              purple: '#1f1133',
+              dark: '#000000'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
-<body class="bg-gradient-to-b from-black via-purple-900 to-black text-gray-100">
+
+<body class="bg-gradient-to-b from-black via-purple-900 to-black text-gray-100 min-h-screen">
 
   <div id="site-header"></div>
 
   <main class="pt-28">
 
-    <!-- HERO -->
+    <!-- HERO SECTION -->
     <section id="home" class="min-h-screen flex items-center">
       <div class="max-w-6xl mx-auto px-6 text-center">
-        <h2 class="text-4xl md:text-5xl font-extrabold leading-tight">Classic Brand</h2>
-        <p class="mt-4 text-lg text-gray-200">Premium embroidery, printing, labeling & digitizing from Matugga Center.</p>
-        <div class="mt-6 flex justify-center gap-4">
-          <a href="#portfolio" class="px-5 py-3 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-md text-black font-semibold">View Portfolio</a>
-          <a href="./contact.html" class="px-5 py-3 border border-white rounded">Contact Us</a>
+        <h2 class="text-4xl md:text-5xl font-extrabold leading-tight mb-4">Classic Brand Co</h2>
+        <p class="mt-4 text-lg text-gray-200 max-w-2xl mx-auto">
+          Professional embroidery, printing, labeling & digitizing services.
+          Bringing your brand vision to life with quality craftsmanship.
+        </p>
+        <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+          <a href="#portfolio"
+            class="px-6 py-3 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-md text-black font-semibold hover:from-yellow-500 hover:to-yellow-700 transition-all">
+            View Our Work
+          </a>
+          <a href="./contact.html"
+            class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition-all">
+            Get Quote
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- SERVICES -->
-    <section id="services" class="py-12 bg-white/5">
+    <!-- SERVICES SECTION -->
+    <section id="services" class="py-16 bg-white/5">
       <div class="max-w-6xl mx-auto px-6">
-        <h3 class="text-3xl font-bold mb-6">Our Expert Services</h3>
-        <div class="grid md:grid-cols-3 gap-6">
-          <article class="bg-white/5 p-6 rounded-lg">
-            <h4 class="font-semibold text-xl">Embroidery</h4>
-            <p class="mt-2 text-sm">Custom stitched logos for shirts, caps & more. Digitizing included.</p>
+        <h3 class="text-3xl font-bold mb-12 text-center">Our Expert Services</h3>
+        <div class="grid md:grid-cols-3 gap-8">
+          <article class="bg-white/5 p-6 rounded-lg hover:bg-white/10 transition-all">
+            <div class="w-12 h-12 bg-yellow-400 rounded-lg flex items-center justify-center mb-4">
+              <i class="fas fa-tshirt text-black text-xl"></i>
+            </div>
+            <h4 class="font-semibold text-xl mb-3">Embroidery</h4>
+            <p class="text-gray-300">Custom stitched logos for shirts, caps, jackets & more. Professional digitizing
+              included for perfect results every time.</p>
           </article>
-          <article class="bg-white/5 p-6 rounded-lg">
-            <h4 class="font-semibold text-xl">T-shirt Printing</h4>
-            <p class="mt-2 text-sm">DTG, screen printing & heat transfer for small and bulk orders.</p>
+
+          <article class="bg-white/5 p-6 rounded-lg hover:bg-white/10 transition-all">
+            <div class="w-12 h-12 bg-yellow-400 rounded-lg flex items-center justify-center mb-4">
+              <i class="fas fa-print text-black text-xl"></i>
+            </div>
+            <h4 class="font-semibold text-xl mb-3">T-shirt Printing</h4>
+            <p class="text-gray-300">DTG, screen printing & heat transfer for small and bulk orders. Vibrant colors that
+              last through many washes.</p>
           </article>
-          <article class="bg-white/5 p-6 rounded-lg">
-            <h4 class="font-semibold text-xl">Labeling & Branding</h4>
-            <p class="mt-2 text-sm">Custom labels, tags and full brand identity solutions.</p>
+
+          <article class="bg-white/5 p-6 rounded-lg hover:bg-white/10 transition-all">
+            <div class="w-12 h-12 bg-yellow-400 rounded-lg flex items-center justify-center mb-4">
+              <i class="fas fa-tag text-black text-xl"></i>
+            </div>
+            <h4 class="font-semibold text-xl mb-3">Labeling & Branding</h4>
+            <p class="text-gray-300">Custom labels, tags and full brand identity solutions. Complete branding packages
+              for businesses.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- PORTFOLIO -->
-    <section id="portfolio" class="py-12">
+    <!-- PORTFOLIO SECTION -->
+    <section id="portfolio" class="py-16">
       <div class="max-w-6xl mx-auto px-6">
-        <h3 class="text-3xl font-bold mb-6">Our Work</h3>
-        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-          <div class="bg-white/5 rounded overflow-hidden">
-            <img src="/assets/img/embroidery-shirt.jpg" alt="Embroidered shirt" class="w-full h-48 object-cover"/>
-            <div class="p-4"><h4 class="font-semibold">Embroidered Shirt</h4></div>
+        <h3 class="text-3xl font-bold mb-12 text-center">Our Recent Work</h3>
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <div class="bg-white/5 rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all">
+            <div class="w-full h-48 bg-gradient-to-br from-purple-600 to-yellow-500 flex items-center justify-center">
+              <i class="fas fa-tshirt text-white text-4xl"></i>
+            </div>
+            <div class="p-4">
+              <h4 class="font-semibold">Embroidered Uniforms</h4>
+              <p class="text-sm text-gray-400 mt-1">Corporate branding</p>
+            </div>
           </div>
-          <div class="bg-white/5 rounded overflow-hidden">
-            <img src="/assets/img/tshirt-printing.jpg" alt="Printed T-shirt" class="w-full h-48 object-cover"/>
-            <div class="p-4"><h4 class="font-semibold">Printed T-shirt</h4></div>
+
+          <div class="bg-white/5 rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all">
+            <div class="w-full h-48 bg-gradient-to-br from-blue-600 to-green-500 flex items-center justify-center">
+              <i class="fas fa-print text-white text-4xl"></i>
+            </div>
+            <div class="p-4">
+              <h4 class="font-semibold">Event T-shirts</h4>
+              <p class="text-sm text-gray-400 mt-1">Bulk printing</p>
+            </div>
           </div>
-          <div class="bg-white/5 rounded overflow-hidden">
-            <img src="/assets/img/custom-labels.jpg" alt="Custom labels" class="w-full h-48 object-cover"/>
-            <div class="p-4"><h4 class="font-semibold">Custom Labels</h4></div>
+
+          <div class="bg-white/5 rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all">
+            <div class="w-full h-48 bg-gradient-to-br from-red-600 to-pink-500 flex items-center justify-center">
+              <i class="fas fa-tag text-white text-4xl"></i>
+            </div>
+            <div class="p-4">
+              <h4 class="font-semibold">Custom Labels</h4>
+              <p class="text-sm text-gray-400 mt-1">Brand identity</p>
+            </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="py-16 bg-gradient-to-r from-purple-800 to-indigo-900">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <h3 class="text-3xl font-bold mb-4">Ready to Start Your Project?</h3>
+        <p class="text-gray-200 mb-8">Get a free quote for your embroidery, printing or labeling needs.</p>
+        <a href="./contact.html"
+          class="inline-block px-8 py-3 bg-yellow-400 text-black font-semibold rounded-lg hover:bg-yellow-500 transition-all">
+          Contact Us Today
+        </a>
       </div>
     </section>
 
   </main>
 
   <div id="site-footer"></div>
-  <script src="/assets/js/main.js"></script>
+  <script src="./assets/js/main.js"></script>
 </body>
+
 </html>
