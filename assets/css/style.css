@@ -1,3 +1,4 @@
+/* style.css - Enhanced Version */
 /* ===== RESET & BASE STYLES ===== */
 * {
     margin: 0;
@@ -591,6 +592,66 @@
     font-size: 14px;
   }
   
+  /* About Section */
+  .about-section {
+    padding: 100px 20px;
+    background: rgba(255, 255, 255, 0.03);
+  }
+  
+  .about-grid {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 1fr;
+  }
+  
+  .about-card {
+    background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+    padding: 40px 30px;
+    border-radius: 16px;
+    text-align: center;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .about-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(246, 193, 78, 0.3);
+  }
+  
+  .about-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #f6c14e, #e5b63e);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    transition: all 0.4s ease;
+  }
+  
+  .about-card:hover .about-icon {
+    transform: scale(1.1);
+  }
+  
+  .about-icon i {
+    font-size: 28px;
+    color: #000;
+  }
+  
+  .about-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: white;
+  }
+  
+  .about-description {
+    color: #cbd5e0;
+    line-height: 1.7;
+    font-size: 16px;
+  }
+  
   /* ===== CONTACT PAGE STYLES ===== */
   .contact-content {
     padding: 60px 20px 80px;
@@ -1162,6 +1223,10 @@
       grid-template-columns: repeat(3, 1fr);
     }
     
+    .about-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
     .contact-grid {
       grid-template-columns: 1fr 1fr;
     }
@@ -1197,7 +1262,8 @@
     }
     
     .services-section,
-    .portfolio-section {
+    .portfolio-section,
+    .about-section {
       padding: 120px 20px;
     }
     
@@ -1207,6 +1273,10 @@
     
     .footer-grid {
       padding: 100px 20px 80px;
+    }
+    
+    .about-grid {
+      grid-template-columns: repeat(4, 1fr);
     }
     
     .hero-title {
@@ -1239,7 +1309,8 @@
     .portfolio-card,
     .info-card,
     .form-card,
-    .map-card {
+    .map-card,
+    .about-card {
       border: 2px solid white;
     }
   }

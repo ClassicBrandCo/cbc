@@ -1,3 +1,4 @@
+// main.js - Enhanced Version
 // Classic Brand Co - Main JavaScript
 // Enhanced with smooth animations and better user experience
 
@@ -184,7 +185,7 @@ class ClassicBrandWebsite {
       }, observerOptions);
       
       // Observe elements for scroll animations
-      const animatedElements = document.querySelectorAll('.service-card, .portfolio-card, .info-card');
+    const animatedElements = document.querySelectorAll('.service-card, .portfolio-card, .info-card, .about-card');
       animatedElements.forEach(element => {
           element.style.opacity = '0';
           element.style.transform = 'translateY(30px)';
@@ -357,7 +358,7 @@ class ClassicBrandWebsite {
   // Hover Effects
   setupHoverEffects() {
       // Add hover class to interactive elements
-      const interactiveElements = document.querySelectorAll('.service-card, .portfolio-card, .info-card, .btn-primary, .btn-secondary');
+    const interactiveElements = document.querySelectorAll('.service-card, .portfolio-card, .info-card, .about-card, .btn-primary, .btn-secondary');
       
       interactiveElements.forEach(element => {
           element.addEventListener('mouseenter', () => {
