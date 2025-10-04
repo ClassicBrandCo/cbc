@@ -1,200 +1,233 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Classic Brand — Embroidery • Printing • Digitizing • Labeling</title>
-  <meta name="description"
-    content="Classic Brand — Professional embroidery, printing, digitizing and labeling services in Matugga Center. Quality T-shirt printing and custom branding." />
-  <meta property="og:title" content="Classic Brand — Embroidery & Printing" />
-  <meta property="og:description"
-    content="Premium embroidery, printing, labeling & digitizing services from Matugga Center." />
-  <meta property="og:image" content="./assets/img/og-image.png" />
-
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              yellow: '#f6c14e',
-              purple: '#1f1133',
-              dark: '#000000'
-            }
-          }
-        }
-      }
-    }
-  </script>
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="./assets/css/style.css" />
+  <title>Classic Brand Co — Embroidery • Printing • Digitizing • Labeling</title>
+  <meta name="description" content="Classic Brand Co — Professional embroidery, printing, digitizing and labeling services in Matugga Center. Quality T-shirt printing and custom branding." />
+  
+  <!-- External CSS -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+<body>
 
-<body class="bg-gradient-to-b from-black via-purple-900 to-black text-gray-100 min-h-screen">
+<!-- Header -->
+<header class="site-header">
+  <div class="container header-container">
+    <!-- Logo -->
+    <a href="./index.html" class="logo-link">
+      <div class="logo-icon">
+        <img src="./assets/img/logo.svg" alt="Classic Brand Co" class="logo-img">
+      </div>
+      <div class="logo-text">
+        <h1 class="logo-title">Classic Brand Co</h1>
+        <p class="logo-subtitle">Embroidery · Printing · Labeling</p>
+      </div>
+    </a>
 
-  <div id="site-header"></div>
+    <!-- Desktop Navigation -->
+    <nav class="desktop-nav">
+      <a href="./index.html" class="nav-link">Home</a>
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#portfolio" class="nav-link">Portfolio</a>
+      <a href="./contact.html" class="nav-button">Contact Us</a>
+    </nav>
 
-  <main class="pt-28">
+    <!-- Mobile Menu Toggle -->
+    <button id="mobile-menu-toggle" class="mobile-toggle">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
 
-    <!-- HERO SECTION -->
-    <section id="home" class="min-h-screen flex items-center">
-      <div class="max-w-6xl mx-auto px-6 text-center">
-        <h2 class="text-4xl md:text-5xl font-extrabold leading-tight mb-4">Classic Brand Co</h2>
-        <p class="mt-4 text-lg text-gray-200 max-w-2xl mx-auto">
-          Professional embroidery, printing, labeling & digitizing services.
-          Bringing your brand vision to life with quality craftsmanship.
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="mobile-menu hidden">
+    <div class="mobile-nav">
+      <a href="./index.html" class="mobile-nav-link">
+        <i class="fas fa-home"></i>
+        Home
+      </a>
+      <a href="#services" class="mobile-nav-link">
+        <i class="fas fa-concierge-bell"></i>
+        Services
+      </a>
+      <a href="#portfolio" class="mobile-nav-link">
+        <i class="fas fa-images"></i>
+        Portfolio
+      </a>
+      <a href="./contact.html" class="mobile-nav-button">
+        <i class="fas fa-envelope"></i>
+        Contact Us
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- Spacer for fixed header -->
+<div class="header-spacer"></div>
+
+<main class="main-content">
+
+  <!-- HERO SECTION -->
+  <section id="home" class="hero-section">
+    <div class="container text-center">
+      <h2 class="hero-title">Classic Brand Co</h2>
+      <p class="hero-description">
+        Professional embroidery, printing, labeling & digitizing services. 
+        Bringing your brand vision to life with quality craftsmanship.
+      </p>
+      <div class="hero-buttons">
+        <a href="#portfolio" class="btn-primary">View Our Work</a>
+        <a href="./contact.html" class="btn-secondary">Get Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES SECTION -->
+  <section id="services" class="services-section">
+    <div class="container">
+      <h3 class="section-title">Our Expert Services</h3>
+      <div class="services-grid">
+        <article class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-tshirt"></i>
+          </div>
+          <h4 class="service-title">Embroidery</h4>
+          <p class="service-description">Custom stitched logos for shirts, caps, jackets & more. Professional digitizing included for perfect results every time.</p>
+        </article>
+        
+        <article class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-print"></i>
+          </div>
+          <h4 class="service-title">T-shirt Printing</h4>
+          <p class="service-description">DTG, screen printing & heat transfer for small and bulk orders. Vibrant colors that last through many washes.</p>
+        </article>
+        
+        <article class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-tag"></i>
+          </div>
+          <h4 class="service-title">Labeling & Branding</h4>
+          <p class="service-description">Custom labels, tags and full brand identity solutions. Complete branding packages for businesses.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO SECTION -->
+  <section id="portfolio" class="portfolio-section">
+    <div class="container">
+      <h3 class="section-title">Our Recent Work</h3>
+      <div class="portfolio-grid">
+        <div class="portfolio-card">
+          <div class="portfolio-image embroidery-image">
+            <i class="fas fa-tshirt"></i>
+          </div>
+          <div class="portfolio-content">
+            <h4 class="portfolio-title">Embroidered Uniforms</h4>
+            <p class="portfolio-category">Corporate branding</p>
+          </div>
+        </div>
+        
+        <div class="portfolio-card">
+          <div class="portfolio-image printing-image">
+            <i class="fas fa-print"></i>
+          </div>
+          <div class="portfolio-content">
+            <h4 class="portfolio-title">Event T-shirts</h4>
+            <p class="portfolio-category">Bulk printing</p>
+          </div>
+        </div>
+        
+        <div class="portfolio-card">
+          <div class="portfolio-image labeling-image">
+            <i class="fas fa-tag"></i>
+          </div>
+          <div class="portfolio-content">
+            <h4 class="portfolio-title">Custom Labels</h4>
+            <p class="portfolio-category">Brand identity</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <!-- Brand Information -->
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="logo-icon">
+            <img src="./assets/img/logo.svg" alt="Classic Brand Co" class="logo-img">
+          </div>
+          <div>
+            <h3 class="footer-title">Classic Brand Co</h3>
+            <p class="footer-subtitle">Quality Since 2024</p>
+          </div>
+        </div>
+        <p class="footer-description">
+          Professional embroidery, printing, and labeling services. 
+          Transforming your brand vision into high-quality finished products.
         </p>
-        <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
-          <a href="#portfolio"
-            class="px-6 py-3 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-md text-black font-semibold hover:from-yellow-500 hover:to-yellow-700 transition-all">
-            View Our Work
-          </a>
-          <a href="./contact.html"
-            class="px-6 py-3 border border-white rounded hover:bg-white hover:text-black transition-all">
-            Get Quote
-          </a>
+        <div class="footer-info">
+          <p>📍 Matugga Center (near Lwadda School)</p>
+          <p>🕒 Mon-Sat: 8:00 AM - 6:00 PM</p>
         </div>
       </div>
-    </section>
 
-    <!-- SERVICES SECTION -->
-    <section id="services" class="py-16 bg-white/5">
-      <div class="max-w-6xl mx-auto px-6">
-        <h3 class="text-3xl font-bold mb-12 text-center">Our Expert Services</h3>
-        <div class="grid md:grid-cols-3 gap-8">
-          <article class="bg-white/5 p-6 rounded-lg hover:bg-white/10 transition-all">
-            <div class="w-12 h-12 bg-yellow-400 rounded-lg flex items-center justify-center mb-4">
-              <i class="fas fa-tshirt text-black text-xl"></i>
+      <!-- Contact Information -->
+      <div class="footer-contact">
+        <h4 class="footer-heading">Get In Touch</h4>
+        <div class="contact-links">
+          <a href="https://wa.me/256785475049" class="contact-link">
+            <div class="contact-icon whatsapp">
+              <i class="fab fa-whatsapp"></i>
             </div>
-            <h4 class="font-semibold text-xl mb-3">Embroidery</h4>
-            <p class="text-gray-300">Custom stitched logos for shirts, caps, jackets & more. Professional digitizing
-              included for perfect results every time.</p>
-          </article>
-
-          <article class="bg-white/5 p-6 rounded-lg hover:bg-white/10 transition-all">
-            <div class="w-12 h-12 bg-yellow-400 rounded-lg flex items-center justify-center mb-4">
-              <i class="fas fa-print text-black text-xl"></i>
+            <div class="contact-info">
+              <div class="contact-type">WhatsApp</div>
+              <div class="contact-detail">+256 785 475 049</div>
             </div>
-            <h4 class="font-semibold text-xl mb-3">T-shirt Printing</h4>
-            <p class="text-gray-300">DTG, screen printing & heat transfer for small and bulk orders. Vibrant colors that
-              last through many washes.</p>
-          </article>
-
-          <article class="bg-white/5 p-6 rounded-lg hover:bg-white/10 transition-all">
-            <div class="w-12 h-12 bg-yellow-400 rounded-lg flex items-center justify-center mb-4">
-              <i class="fas fa-tag text-black text-xl"></i>
+          </a>
+          
+          <a href="tel:+256759921866" class="contact-link">
+            <div class="contact-icon phone">
+              <i class="fas fa-phone"></i>
             </div>
-            <h4 class="font-semibold text-xl mb-3">Labeling & Branding</h4>
-            <p class="text-gray-300">Custom labels, tags and full brand identity solutions. Complete branding packages
-              for businesses.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- PORTFOLIO SECTION -->
-    <!-- PORTFOLIO SECTION -->
-    <section id="portfolio" class="py-16">
-      <div class="max-w-6xl mx-auto px-6">
-        <h3 class="text-3xl font-bold mb-12 text-center">Our Recent Work</h3>
-        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
-
-          <!-- Embroidery Work -->
-          <div
-            class="bg-white/5 rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300 card-hover">
-            <div
-              class="w-full h-48 bg-gradient-to-br from-purple-600 to-yellow-500 flex items-center justify-center relative">
-              <i class="fas fa-tshirt text-white text-4xl"></i>
-              <div class="absolute bottom-2 right-2 bg-black/50 text-white text-xs px-2 py-1 rounded">
-                Sample
-              </div>
+            <div class="contact-info">
+              <div class="contact-type">Phone Call</div>
+              <div class="contact-detail">+256 759 921 866</div>
             </div>
-            <div class="p-4">
-              <h4 class="font-semibold">Embroidered Uniforms</h4>
-              <p class="text-sm text-gray-400 mt-1">Corporate branding with precision stitching</p>
-              <div class="flex gap-1 mt-2">
-                <span class="text-xs bg-purple-500/20 text-purple-300 px-2 py-1 rounded">Shirts</span>
-                <span class="text-xs bg-yellow-500/20 text-yellow-300 px-2 py-1 rounded">Caps</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Printing Work -->
-          <div
-            class="bg-white/5 rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300 card-hover">
-            <div
-              class="w-full h-48 bg-gradient-to-br from-blue-600 to-green-500 flex items-center justify-center relative">
-              <i class="fas fa-print text-white text-4xl"></i>
-              <div class="absolute bottom-2 right-2 bg-black/50 text-white text-xs px-2 py-1 rounded">
-                Sample
-              </div>
-            </div>
-            <div class="p-4">
-              <h4 class="font-semibold">Event T-shirts</h4>
-              <p class="text-sm text-gray-400 mt-1">Vibrant prints for events and teams</p>
-              <div class="flex gap-1 mt-2">
-                <span class="text-xs bg-blue-500/20 text-blue-300 px-2 py-1 rounded">DTG</span>
-                <span class="text-xs bg-green-500/20 text-green-300 px-2 py-1 rounded">Screen</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Labeling Work -->
-          <div
-            class="bg-white/5 rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300 card-hover">
-            <div
-              class="w-full h-48 bg-gradient-to-br from-red-600 to-pink-500 flex items-center justify-center relative">
-              <i class="fas fa-tag text-white text-4xl"></i>
-              <div class="absolute bottom-2 right-2 bg-black/50 text-white text-xs px-2 py-1 rounded">
-                Sample
-              </div>
-            </div>
-            <div class="p-4">
-              <h4 class="font-semibold">Custom Labels</h4>
-              <p class="text-sm text-gray-400 mt-1">Professional branding solutions</p>
-              <div class="flex gap-1 mt-2">
-                <span class="text-xs bg-red-500/20 text-red-300 px-2 py-1 rounded">Tags</span>
-                <span class="text-xs bg-pink-500/20 text-pink-300 px-2 py-1 rounded">Labels</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Call to Action -->
-        <div class="text-center mt-12">
-          <p class="text-gray-400 mb-4">Want to see more of our work?</p>
-          <a href="./contact.html"
-            class="inline-flex items-center gap-2 bg-yellow-400 text-black px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
-            <i class="fas fa-images"></i>
-            View Full Portfolio
           </a>
         </div>
       </div>
-    </section>
 
-    <!-- CTA SECTION -->
-    <section class="py-16 bg-gradient-to-r from-purple-800 to-indigo-900">
-      <div class="max-w-4xl mx-auto px-6 text-center">
-        <h3 class="text-3xl font-bold mb-4">Ready to Start Your Project?</h3>
-        <p class="text-gray-200 mb-8">Get a free quote for your embroidery, printing or labeling needs.</p>
-        <a href="./contact.html"
-          class="inline-block px-8 py-3 bg-yellow-400 text-black font-semibold rounded-lg hover:bg-yellow-500 transition-all">
-          Contact Us Today
-        </a>
+      <!-- Quick Links -->
+      <div class="footer-links">
+        <h4 class="footer-heading">Quick Links</h4>
+        <div class="links-grid">
+          <a href="./index.html" class="footer-link">Home</a>
+          <a href="#services" class="footer-link">Services</a>
+          <a href="#portfolio" class="footer-link">Portfolio</a>
+          <a href="./contact.html" class="footer-link">Contact</a>
+        </div>
       </div>
-    </section>
+    </div>
 
-  </main>
+    <!-- Copyright -->
+    <div class="footer-copyright">
+      <div class="container">
+        <p>© <span id="year">2024</span> Classic Brand Co. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
 
-  <div id="site-footer"></div>
-  <script src="./assets/js/main.js"></script>
+<!-- External JavaScript -->
+<script src="./assets/js/main.js"></script>
 </body>
-
 </html>

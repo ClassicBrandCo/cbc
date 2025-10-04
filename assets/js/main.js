@@ -1,340 +1,476 @@
-// assets/js/main.js - PRODUCTION READY
-(function () {
-  'use strict';
+// Classic Brand Co - Main JavaScript
+// Enhanced with smooth animations and better user experience
 
-  // Simple logging (disabled in production)
-  function log(msg, ok) {
-    // Enable for debugging: console.log(ok ? '✔' : '✖', msg);
+class ClassicBrandWebsite {
+  constructor() {
+      this.mobileMenuToggle = null;
+      this.mobileMenu = null;
+      this.isMobileMenuOpen = false;
+      
+      this.init();
   }
-
-  // Get base path for GitHub Pages
-  function getBasePath() {
-    const path = location.pathname;
-    const parts = path.split('/').filter(Boolean);
-
-    // If we're at root like 'classicbrandco.github.io'
-    if (parts.length === 0) return '/';
-
-    // If we're in a repo like 'classicbrandco.github.io/cbc'
-    const firstPart = parts[0];
-
-    // Special case: if we're on a page like /cbc/contact.html
-    if (path.includes('.html') && !path.endsWith('/')) {
-      return '/' + firstPart + '/';
-    }
-
-    return path.endsWith('/') ? path : path + '/';
-  }
-
-  const repoBase = getBasePath();
-  log('Base path detected: ' + repoBase, true);
-
-  // Fetch helper with error handling
-  async function tryFetch(path) {
-    try {
-      const response = await fetch(path, {
-        cache: 'no-cache',
-        headers: {
-          'Accept': 'text/html'
-        }
-      });
-
-      if (!response.ok) {
-        log('Fetch failed: ' + path + ' (' + response.status + ')', false);
-        return null;
+  
+  init() {
+      // Wait for DOM to be fully loaded
+      if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', () => this.setup());
+      } else {
+          this.setup();
       }
-
-      const text = await response.text();
-      if (!text || text.trim().length === 0) {
-        log('Empty response: ' + path, false);
-        return null;
-      }
-
-      log('Loaded: ' + path, true);
-      return text;
-    } catch (error) {
-      log('Fetch error: ' + path + ' - ' + error.message, false);
-      return null;
-    }
   }
-
-  // Generate possible file paths
-  function candidatesFor(filename) {
-    const basePaths = [
-      '',              // current directory
-      './',           // current directory
-      repoBase,       // repository base
-      repoBase + './', // repository base with current
-      '/',            // root
-      '/components/',  // root components
-      '../'           // parent directory
-    ];
-
-    const paths = [];
-
-    basePaths.forEach(base => {
-      paths.push(
-        base + filename,
-        base + 'components/' + filename,
-        base + 'assets/components/' + filename
-      );
-    });
-
-    // Remove duplicates and empty strings
-    return [...new Set(paths.filter(path => path && path.length > 0))];
+  
+  setup() {
+      this.setupMobileMenu();
+      this.setupSmoothScroll();
+      this.updateCopyrightYear();
+      this.setupAnimations();
+      this.setupFormHandling();
+      this.setupHoverEffects();
+      this.setupPerformanceOptimizations();
+      
+      console.log('Classic Brand Co website initialized successfully!');
   }
-
-  // Load fragment into container
-  async function loadFragment(containerId, filename) {
-    const container = document.getElementById(containerId);
-    if (!container) {
-      log('Container not found: #' + containerId, false);
-      return false;
-    }
-
-    const candidates = candidatesFor(filename);
-    log('Trying ' + candidates.length + ' paths for ' + filename, true);
-
-    for (const path of candidates) {
-      const html = await tryFetch(path);
-      if (html) {
-        container.innerHTML = html;
-        log('Successfully loaded: ' + path, true);
-
-        // Re-initialize any dynamic content in the fragment
-        initializeLoadedContent(containerId);
-        return true;
-      }
-    }
-
-    // Fallback content if all fetches fail
-    log('All paths failed, using fallback for: ' + containerId, false);
-    injectFallbackContent(containerId);
-    return false;
-  }
-
-  // Initialize dynamic content in loaded fragments
-  function initializeLoadedContent(containerId) {
-    // Update copyright year in footer
-    if (containerId === 'site-footer') {
-      const yearElements = document.querySelectorAll('#year, #year-alt');
-      const currentYear = new Date().getFullYear();
-      yearElements.forEach(el => {
-        if (el) el.textContent = currentYear;
-      });
-    }
-
-    // Re-attach event listeners for mobile menu
-    if (containerId === 'site-header') {
-      initializeMobileMenu();
-    }
-  }
-
-  // Fallback content when fragments can't be loaded
-  function injectFallbackContent(containerId) {
-    const container = document.getElementById(containerId);
-    if (!container) return;
-
-    if (containerId === 'site-header') {
-      container.innerHTML = `
-        <header class="bg-gradient-to-r from-indigo-900 via-purple-700 to-black text-white fixed w-full z-40 shadow-lg">
-          <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-            <a href="${repoBase}index.html" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
-              <div class="w-10 h-10 bg-yellow-400 rounded-lg flex items-center justify-center">
-                <i class="fas fa-tshirt text-black text-lg"></i>
-              </div>
-              <div>
-                <h1 class="text-lg font-bold">Classic Brand Co</h1>
-                <p class="text-xs opacity-80">Embroidery · Printing · Labeling</p>
-              </div>
-            </a>
-            <nav class="hidden md:flex items-center gap-6 text-sm">
-              <a href="${repoBase}index.html" class="hover:text-yellow-400 transition-colors">Home</a>
-              <a href="${repoBase}index.html#services" class="hover:text-yellow-400 transition-colors">Services</a>
-              <a href="${repoBase}index.html#portfolio" class="hover:text-yellow-400 transition-colors">Portfolio</a>
-              <a href="${repoBase}contact.html" class="bg-yellow-400 text-black px-4 py-2 rounded-lg hover:bg-yellow-500 transition-colors font-semibold">
-                Contact
-              </a>
-            </nav>
-            <button id="mobile-menu-toggle" class="md:hidden p-2 text-white">
-              <i class="fas fa-bars text-lg"></i>
-            </button>
-          </div>
-          
-          <!-- Mobile Menu -->
-          <div id="mobile-menu" class="md:hidden hidden bg-black/95 backdrop-blur-sm">
-            <div class="px-4 py-4 flex flex-col gap-3">
-              <a href="${repoBase}index.html" class="py-2 px-4 hover:bg-white/10 rounded transition-colors">Home</a>
-              <a href="${repoBase}index.html#services" class="py-2 px-4 hover:bg-white/10 rounded transition-colors">Services</a>
-              <a href="${repoBase}index.html#portfolio" class="py-2 px-4 hover:bg-white/10 rounded transition-colors">Portfolio</a>
-              <a href="${repoBase}contact.html" class="bg-yellow-400 text-black py-2 px-4 rounded font-semibold text-center mt-2">
-                Contact Us
-              </a>
-            </div>
-          </div>
-        </header>
-        <div class="h-16"></div>
-      `;
-    }
-    else if (containerId === 'site-footer') {
-      const currentYear = new Date().getFullYear();
-      container.innerHTML = `
-        <footer class="bg-black text-gray-300 mt-16">
-          <div class="max-w-6xl mx-auto px-6 py-10 grid md:grid-cols-3 gap-8">
-            <div>
-              <h3 class="text-xl font-semibold text-white mb-4">Classic Brand Co</h3>
-              <p class="text-sm leading-relaxed">
-                Matugga Center (near Lwadda School)<br>
-                Professional T-shirt printing • Embroidery • Labeling • Digitizing
-              </p>
-            </div>
-            <div>
-              <h4 class="font-semibold text-white mb-4">Contact Info</h4>
-              <div class="space-y-2 text-sm">
-                <p class="flex items-center">
-                  <i class="fab fa-whatsapp text-green-400 mr-3"></i>
-                  <a href="https://wa.me/256785475049" class="hover:text-yellow-400 transition-colors">
-                    WhatsApp: 0785 475 049
-                  </a>
-                </p>
-                <p class="flex items-center">
-                  <i class="fas fa-phone text-blue-400 mr-3"></i>
-                  <a href="tel:+256759921866" class="hover:text-yellow-400 transition-colors">
-                    Call: 0759 921 866
-                  </a>
-                </p>
-              </div>
-            </div>
-            <div>
-              <h4 class="font-semibold text-white mb-4">Follow Us</h4>
-              <div class="flex gap-4">
-                <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-yellow-400 hover:text-black transition-all">
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-yellow-400 hover:text-black transition-all">
-                  <i class="fab fa-instagram"></i>
-                </a>
-                <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-yellow-400 hover:text-black transition-all">
-                  <i class="fab fa-whatsapp"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="border-t border-gray-800">
-            <div class="max-w-6xl mx-auto px-6 py-4 text-center text-sm text-gray-500">
-              © ${currentYear} Classic Brand Co. All rights reserved.
-            </div>
-          </div>
-        </footer>
-      `;
-    }
-
-    // Re-initialize after injecting fallback
-    initializeLoadedContent(containerId);
-  }
-
-  // Mobile menu functionality
-  function initializeMobileMenu() {
-    const toggle = document.getElementById('mobile-menu-toggle');
-    const menu = document.getElementById('mobile-menu');
-
-    if (toggle && menu) {
-      toggle.addEventListener('click', function (e) {
-        e.preventDefault();
-        menu.classList.toggle('hidden');
-        menu.classList.toggle('block');
-
-        // Update icon
-        const icon = toggle.querySelector('i');
-        if (icon) {
-          if (menu.classList.contains('hidden')) {
-            icon.className = 'fas fa-bars';
-          } else {
-            icon.className = 'fas fa-times';
-          }
-        }
-      });
-
-      // Close menu when clicking outside
-      document.addEventListener('click', function (e) {
-        if (!menu.contains(e.target) && !toggle.contains(e.target) && !menu.classList.contains('hidden')) {
-          menu.classList.add('hidden');
-          menu.classList.remove('block');
-          const icon = toggle.querySelector('i');
-          if (icon) icon.className = 'fas fa-bars';
-        }
-      });
-    }
-  }
-
-  // Smooth scroll for anchor links
-  function initializeSmoothScroll() {
-    document.addEventListener('click', function (e) {
-      const link = e.target.closest('a[href^="#"]');
-      if (link && link.getAttribute('href') !== '#') {
-        const href = link.getAttribute('href');
-        const target = document.querySelector(href);
-
-        if (target) {
-          e.preventDefault();
-          const headerHeight = 80; // Approximate header height
-          const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-
-          window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
+  
+  // Mobile Menu Functionality
+  setupMobileMenu() {
+      this.mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+      this.mobileMenu = document.getElementById('mobile-menu');
+      
+      if (this.mobileMenuToggle && this.mobileMenu) {
+          // Click event for mobile menu toggle
+          this.mobileMenuToggle.addEventListener('click', (e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              this.toggleMobileMenu();
           });
-
-          // Close mobile menu if open
-          const mobileMenu = document.getElementById('mobile-menu');
-          const menuToggle = document.getElementById('mobile-menu-toggle');
-          if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-            mobileMenu.classList.add('hidden');
-            mobileMenu.classList.remove('block');
-            const icon = menuToggle?.querySelector('i');
-            if (icon) icon.className = 'fas fa-bars';
-          }
-        }
+          
+          // Close menu when clicking outside
+          document.addEventListener('click', (e) => {
+              if (this.isMobileMenuOpen && 
+                  !this.mobileMenu.contains(e.target) && 
+                  !this.mobileMenuToggle.contains(e.target)) {
+                  this.closeMobileMenu();
+              }
+          });
+          
+          // Close menu when pressing Escape key
+          document.addEventListener('keydown', (e) => {
+              if (e.key === 'Escape' && this.isMobileMenuOpen) {
+                  this.closeMobileMenu();
+              }
+          });
+          
+          // Prevent body scroll when menu is open
+          this.mobileMenu.addEventListener('touchmove', (e) => {
+              if (this.isMobileMenuOpen) {
+                  e.preventDefault();
+              }
+          }, { passive: false });
       }
-    });
   }
-
-  // Initialize everything when DOM is ready
-  document.addEventListener('DOMContentLoaded', function () {
-    log('DOM loaded, initializing fragments...', true);
-
-    // Load header and footer
-    Promise.all([
-      loadFragment('site-header', 'header.html'),
-      loadFragment('site-footer', 'footer.html')
-    ]).then(() => {
-      log('All fragments loaded successfully', true);
-    }).catch(error => {
-      log('Error loading fragments: ' + error.message, false);
-    });
-
-    // Initialize smooth scroll
-    initializeSmoothScroll();
-
-    // Update copyright year (fallback)
-    const yearElements = document.querySelectorAll('#year, #year-alt');
-    const currentYear = new Date().getFullYear();
-    yearElements.forEach(el => {
-      if (el && !el.textContent) {
-        el.textContent = currentYear;
+  
+  toggleMobileMenu() {
+      if (this.isMobileMenuOpen) {
+          this.closeMobileMenu();
+      } else {
+          this.openMobileMenu();
       }
-    });
-  });
+  }
+  
+  openMobileMenu() {
+      this.mobileMenu.classList.remove('hidden');
+      this.isMobileMenuOpen = true;
+      
+      // Update menu icon
+      const icon = this.mobileMenuToggle.querySelector('i');
+      if (icon) {
+          icon.className = 'fas fa-times';
+      }
+      
+      // Add animation class
+      this.mobileMenu.style.animation = 'slideDown 0.3s ease-out';
+      
+      // Prevent body scroll
+      document.body.style.overflow = 'hidden';
+  }
+  
+  closeMobileMenu() {
+      this.mobileMenu.classList.add('hidden');
+      this.isMobileMenuOpen = false;
+      
+      // Update menu icon
+      const icon = this.mobileMenuToggle.querySelector('i');
+      if (icon) {
+          icon.className = 'fas fa-bars';
+      }
+      
+      // Restore body scroll
+      document.body.style.overflow = '';
+  }
+  
+  // Smooth Scroll Functionality
+  setupSmoothScroll() {
+      document.addEventListener('click', (e) => {
+          const link = e.target.closest('a[href^="#"]');
+          
+          if (link && link.getAttribute('href') !== '#') {
+              const targetId = link.getAttribute('href');
+              const targetElement = document.querySelector(targetId);
+              
+              if (targetElement) {
+                  e.preventDefault();
+                  this.scrollToElement(targetElement);
+                  
+                  // Close mobile menu if open
+                  if (this.isMobileMenuOpen) {
+                      this.closeMobileMenu();
+                  }
+              }
+          }
+      });
+  }
+  
+  scrollToElement(element) {
+      const headerHeight = 84; // Height of fixed header
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+      
+      window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+      });
+  }
+  
+  // Update Copyright Year
+  updateCopyrightYear() {
+      const yearElements = document.querySelectorAll('#year');
+      const currentYear = new Date().getFullYear();
+      
+      yearElements.forEach(element => {
+          if (element) {
+              element.textContent = currentYear;
+          }
+      });
+  }
+  
+  // Setup Animations
+  setupAnimations() {
+      // Add fade-in animation to main content
+      const mainContent = document.querySelector('.main-content');
+      if (mainContent) {
+          mainContent.classList.add('fade-in');
+      }
+      
+      // Intersection Observer for scroll animations
+      if ('IntersectionObserver' in window) {
+          this.setupScrollAnimations();
+      }
+  }
+  
+  setupScrollAnimations() {
+      const observerOptions = {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px'
+      };
+      
+      const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                  entry.target.style.opacity = '1';
+                  entry.target.style.transform = 'translateY(0)';
+                  observer.unobserve(entry.target);
+              }
+          });
+      }, observerOptions);
+      
+      // Observe elements for scroll animations
+      const animatedElements = document.querySelectorAll('.service-card, .portfolio-card, .info-card');
+      animatedElements.forEach(element => {
+          element.style.opacity = '0';
+          element.style.transform = 'translateY(30px)';
+          element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+          observer.observe(element);
+      });
+  }
+  
+  // Form Handling
+  setupFormHandling() {
+      const contactForm = document.querySelector('.contact-form');
+      
+      if (contactForm) {
+          contactForm.addEventListener('submit', (e) => {
+              this.handleFormSubmit(e, contactForm);
+          });
+          
+          // Add input validation styles
+          this.setupFormValidation(contactForm);
+      }
+  }
+  
+  setupFormValidation(form) {
+      const inputs = form.querySelectorAll('input, textarea, select');
+      
+      inputs.forEach(input => {
+          input.addEventListener('blur', () => {
+              this.validateField(input);
+          });
+          
+          input.addEventListener('input', () => {
+              this.clearFieldError(input);
+          });
+      });
+  }
+  
+  validateField(field) {
+      const value = field.value.trim();
+      
+      if (field.hasAttribute('required') && !value) {
+          this.showFieldError(field, 'This field is required');
+          return false;
+      }
+      
+      if (field.type === 'email' && value) {
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(value)) {
+              this.showFieldError(field, 'Please enter a valid email address');
+              return false;
+          }
+      }
+      
+      this.clearFieldError(field);
+      return true;
+  }
+  
+  showFieldError(field, message) {
+      this.clearFieldError(field);
+      
+      field.style.borderColor = '#ef4444';
+      
+      const errorElement = document.createElement('div');
+      errorElement.className = 'field-error';
+      errorElement.style.color = '#ef4444';
+      errorElement.style.fontSize = '14px';
+      errorElement.style.marginTop = '5px';
+      errorElement.textContent = message;
+      
+      field.parentNode.appendChild(errorElement);
+  }
+  
+  clearFieldError(field) {
+      field.style.borderColor = '';
+      
+      const existingError = field.parentNode.querySelector('.field-error');
+      if (existingError) {
+          existingError.remove();
+      }
+  }
+  
+  async handleFormSubmit(e, form) {
+      e.preventDefault();
+      
+      // Validate all fields
+      const inputs = form.querySelectorAll('input, textarea, select');
+      let isValid = true;
+      
+      inputs.forEach(input => {
+          if (!this.validateField(input)) {
+              isValid = false;
+          }
+      });
+      
+      if (!isValid) {
+          this.showFormMessage('Please fix the errors above', 'error');
+          return;
+      }
+      
+      // Show loading state
+      const submitButton = form.querySelector('.form-submit');
+      const originalText = submitButton.innerHTML;
+      
+      submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+      submitButton.disabled = true;
+      
+      try {
+          // Simulate form submission (replace with actual Formspree or other service)
+          await this.simulateFormSubmission(form);
+          
+          this.showFormMessage('Message sent successfully! We\'ll get back to you soon.', 'success');
+          form.reset();
+          
+      } catch (error) {
+          this.showFormMessage('Sorry, there was an error sending your message. Please try again.', 'error');
+          console.error('Form submission error:', error);
+      } finally {
+          // Restore button state
+          submitButton.innerHTML = originalText;
+          submitButton.disabled = false;
+      }
+  }
+  
+  simulateFormSubmission(form) {
+      return new Promise((resolve, reject) => {
+          setTimeout(() => {
+              // Simulate random success/failure for demo
+              Math.random() > 0.2 ? resolve() : reject(new Error('Simulated network error'));
+          }, 2000);
+      });
+  }
+  
+  showFormMessage(message, type) {
+      // Remove existing messages
+      const existingMessages = document.querySelectorAll('.form-message');
+      existingMessages.forEach(msg => msg.remove());
+      
+      // Create new message
+      const messageElement = document.createElement('div');
+      messageElement.className = `form-message form-message-${type}`;
+      messageElement.style.padding = '16px';
+      messageElement.style.borderRadius = '8px';
+      messageElement.style.marginBottom = '20px';
+      messageElement.style.fontWeight = '500';
+      messageElement.style.textAlign = 'center';
+      
+      if (type === 'success') {
+          messageElement.style.background = 'rgba(34, 197, 94, 0.1)';
+          messageElement.style.border = '1px solid rgba(34, 197, 94, 0.3)';
+          messageElement.style.color = '#22c55e';
+      } else {
+          messageElement.style.background = 'rgba(239, 68, 68, 0.1)';
+          messageElement.style.border = '1px solid rgba(239, 68, 68, 0.3)';
+          messageElement.style.color = '#ef4444';
+      }
+      
+      messageElement.textContent = message;
+      
+      // Insert message at the top of the form
+      const form = document.querySelector('.contact-form');
+      if (form) {
+          form.insertBefore(messageElement, form.firstChild);
+          
+          // Auto-remove message after 5 seconds
+          setTimeout(() => {
+              messageElement.remove();
+          }, 5000);
+      }
+  }
+  
+  // Hover Effects
+  setupHoverEffects() {
+      // Add hover class to interactive elements
+      const interactiveElements = document.querySelectorAll('.service-card, .portfolio-card, .info-card, .btn-primary, .btn-secondary');
+      
+      interactiveElements.forEach(element => {
+          element.addEventListener('mouseenter', () => {
+              element.style.transform = 'translateY(-5px)';
+          });
+          
+          element.addEventListener('mouseleave', () => {
+              element.style.transform = 'translateY(0)';
+          });
+      });
+  }
+  
+  // Performance Optimizations
+  setupPerformanceOptimizations() {
+      // Lazy load images
+      this.setupLazyLoading();
+      
+      // Preload critical resources
+      this.preloadResources();
+  }
+  
+  setupLazyLoading() {
+      if ('IntersectionObserver' in window) {
+          const imageObserver = new IntersectionObserver((entries) => {
+              entries.forEach(entry => {
+                  if (entry.isIntersecting) {
+                      const img = entry.target;
+                      img.src = img.dataset.src;
+                      img.classList.remove('lazy');
+                      imageObserver.unobserve(img);
+                  }
+              });
+          });
+          
+          document.querySelectorAll('img[data-src]').forEach(img => {
+              imageObserver.observe(img);
+          });
+      }
+  }
+  
+  preloadResources() {
+      // Preload critical images
+      const criticalImages = [
+          './assets/img/logo.svg'
+      ];
+      
+      criticalImages.forEach(src => {
+          const link = document.createElement('link');
+          link.rel = 'preload';
+          link.as = 'image';
+          link.href = src;
+          document.head.appendChild(link);
+      });
+  }
+  
+  // Utility Methods
+  debounce(func, wait) {
+      let timeout;
+      return function executedFunction(...args) {
+          const later = () => {
+              clearTimeout(timeout);
+              func(...args);
+          };
+          clearTimeout(timeout);
+          timeout = setTimeout(later, wait);
+      };
+  }
+  
+  throttle(func, limit) {
+      let inThrottle;
+      return function() {
+          const args = arguments;
+          const context = this;
+          if (!inThrottle) {
+              func.apply(context, args);
+              inThrottle = true;
+              setTimeout(() => inThrottle = false, limit);
+          }
+      }
+  }
+}
 
-  // Handle page load completion
-  window.addEventListener('load', function () {
-    log('Page fully loaded', true);
+// Initialize the website when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+  new ClassicBrandWebsite();
+});
 
-    // Add fade-in animation to main content
-    const main = document.querySelector('main');
-    if (main) {
-      main.classList.add('fade-in');
-    }
-  });
+// Handle page load completion
+window.addEventListener('load', () => {
+  // Remove loading states if any
+  document.body.classList.add('loaded');
+  
+  // Add loaded class to trigger any load animations
+  setTimeout(() => {
+      document.body.classList.add('fully-loaded');
+  }, 100);
+});
 
-})();
+// Handle page visibility changes
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) {
+      document.body.classList.add('page-hidden');
+  } else {
+      document.body.classList.remove('page-hidden');
+  }
+});
+
+// Error handling
+window.addEventListener('error', (e) => {
+  console.error('Website error:', e.error);
+});
+
+// Export for potential module usage
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = ClassicBrandWebsite;
+}

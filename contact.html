@@ -1,180 +1,319 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Contact — Classic Brand Co</title>
-  <meta name="description"
-    content="Contact Classic Brand Co for embroidery, printing & labeling services. Visit us at Matugga Center or message on WhatsApp: 0785475049" />
-  <meta property="og:title" content="Contact Classic Brand Co" />
-  <meta property="og:description"
-    content="Reach Classic Brand Co for professional embroidery, printing, labels and digitizing services. WhatsApp: 0785475049" />
-  <meta property="og:image" content="./assets/img/og-image.png" />
-
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              yellow: '#f6c14e',
-              purple: '#1f1133',
-              dark: '#000000'
-            }
-          }
-        }
-      }
-    }
-  </script>
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="./assets/css/style.css" />
+  <meta name="description" content="Contact Classic Brand Co for embroidery, printing & labeling services. Visit us at Matugga Center or message on WhatsApp: 0785475049" />
+  
+  <!-- External CSS -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+<body>
 
-<body class="bg-gradient-to-b from-black via-purple-900 to-black text-gray-100 min-h-screen">
-  <div id="site-header"></div>
-
-  <main class="pt-28 pb-16">
-    <section class="max-w-6xl mx-auto px-6">
-      <div class="text-center mb-12">
-        <h1 class="text-4xl font-bold mb-4">Contact Classic Brand Co</h1>
-        <p class="text-lg text-gray-200 max-w-2xl mx-auto">
-          Get in touch for professional embroidery, printing, and labeling services.
-          We're here to bring your brand vision to life.
-        </p>
+<!-- Header -->
+<header class="site-header">
+  <div class="container header-container">
+    <!-- Logo -->
+    <a href="./index.html" class="logo-link">
+      <div class="logo-icon">
+        <img src="./assets/img/logo.svg" alt="Classic Brand Co" class="logo-img">
       </div>
+      <div class="logo-text">
+        <h1 class="logo-title">Classic Brand Co</h1>
+        <p class="logo-subtitle">Embroidery · Printing · Labeling</p>
+      </div>
+    </a>
 
-      <div class="grid lg:grid-cols-2 gap-8 mb-12">
+    <!-- Desktop Navigation -->
+    <nav class="desktop-nav">
+      <a href="./index.html" class="nav-link">Home</a>
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#portfolio" class="nav-link">Portfolio</a>
+      <a href="./contact.html" class="nav-button">Contact Us</a>
+    </nav>
+
+    <!-- Mobile Menu Toggle -->
+    <button id="mobile-menu-toggle" class="mobile-toggle">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="mobile-menu hidden">
+    <div class="mobile-nav">
+      <a href="./index.html" class="mobile-nav-link">
+        <i class="fas fa-home"></i>
+        Home
+      </a>
+      <a href="#services" class="mobile-nav-link">
+        <i class="fas fa-concierge-bell"></i>
+        Services
+      </a>
+      <a href="#portfolio" class="mobile-nav-link">
+        <i class="fas fa-images"></i>
+        Portfolio
+      </a>
+      <a href="./contact.html" class="mobile-nav-button">
+        <i class="fas fa-envelope"></i>
+        Contact Us
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- Spacer for fixed header -->
+<div class="header-spacer"></div>
+
+<main class="main-content">
+
+  <!-- CONTACT HERO -->
+  <section class="contact-hero">
+    <div class="container text-center">
+      <h1 class="contact-title">Contact Classic Brand Co</h1>
+      <p class="contact-description">
+        Get in touch for professional embroidery, printing, and labeling services. 
+        We're here to bring your brand vision to life.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACT CONTENT -->
+  <section class="contact-content">
+    <div class="container">
+      <div class="contact-grid">
         <!-- Contact Information -->
-        <div class="space-y-6">
-          <div class="bg-white/5 p-6 rounded-lg">
-            <h2 class="text-2xl font-semibold mb-4 flex items-center">
-              <i class="fas fa-map-marker-alt text-yellow-400 mr-3"></i>
-              Visit Our Location
-            </h2>
-            <p class="text-gray-200">
+        <div class="contact-info">
+          <div class="info-card">
+            <div class="info-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <h3 class="info-title">Visit Our Location</h3>
+            <p class="info-detail">
               <strong>Matugga Center</strong><br>
               Near Lwadda School<br>
               Open: Monday - Saturday, 8:00 AM - 6:00 PM
             </p>
           </div>
 
-          <div class="bg-white/5 p-6 rounded-lg">
-            <h2 class="text-2xl font-semibold mb-4 flex items-center">
-              <i class="fas fa-phone-alt text-yellow-400 mr-3"></i>
-              Call or WhatsApp
-            </h2>
-            <div class="space-y-3">
-              <p class="flex items-center">
-                <i class="fab fa-whatsapp text-green-400 mr-3 text-lg"></i>
-                <a href="https://wa.me/256785475049" class="hover:text-yellow-400 transition-colors">
-                  +256 785 475 049
-                </a>
-              </p>
-              <p class="flex items-center">
-                <i class="fas fa-phone text-blue-400 mr-3"></i>
-                <a href="tel:+256759921866" class="hover:text-yellow-400 transition-colors">
-                  +256 759 921 866
-                </a>
-              </p>
+          <div class="info-card">
+            <div class="info-icon">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <h3 class="info-title">Call or WhatsApp</h3>
+            <div class="contact-links">
+              <a href="https://wa.me/256785475049" class="contact-link-item">
+                <div class="contact-link-icon whatsapp">
+                  <i class="fab fa-whatsapp"></i>
+                </div>
+                <div class="contact-link-info">
+                  <div class="contact-type">WhatsApp</div>
+                  <div class="contact-number">+256 785 475 049</div>
+                </div>
+              </a>
+              
+              <a href="tel:+256759921866" class="contact-link-item">
+                <div class="contact-link-icon phone">
+                  <i class="fas fa-phone"></i>
+                </div>
+                <div class="contact-link-info">
+                  <div class="contact-type">Phone Call</div>
+                  <div class="contact-number">+256 759 921 866</div>
+                </div>
+              </a>
             </div>
           </div>
 
-          <div class="bg-white/5 p-6 rounded-lg">
-            <h2 class="text-2xl font-semibold mb-4 flex items-center">
-              <i class="fas fa-clock text-yellow-400 mr-3"></i>
-              Business Hours
-            </h2>
-            <div class="space-y-2 text-gray-200">
-              <p><strong>Monday - Friday:</strong> 8:00 AM - 6:00 PM</p>
-              <p><strong>Saturday:</strong> 8:00 AM - 4:00 PM</p>
-              <p><strong>Sunday:</strong> Closed</p>
+          <div class="info-card">
+            <div class="info-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <h3 class="info-title">Business Hours</h3>
+            <div class="business-hours">
+              <div class="hour-item">
+                <span class="day">Monday - Friday:</span>
+                <span class="time">8:00 AM - 6:00 PM</span>
+              </div>
+              <div class="hour-item">
+                <span class="day">Saturday:</span>
+                <span class="time">8:00 AM - 4:00 PM</span>
+              </div>
+              <div class="hour-item">
+                <span class="day">Sunday:</span>
+                <span class="time">Closed</span>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- Contact Form -->
-        <div class="bg-white/5 p-6 rounded-lg">
-          <h2 class="text-2xl font-semibold mb-6">Send Us a Message</h2>
-          <form action="https://formspree.io/f/your_form_id" method="POST" class="space-y-4">
-            <div>
-              <label for="name" class="block text-sm font-medium mb-2">Full Name *</label>
-              <input type="text" id="name" name="name" required
-                class="w-full px-4 py-3 bg-black/30 border border-gray-600 rounded-lg focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 transition-all"
-                placeholder="Your full name">
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-4">
-              <div>
-                <label for="email" class="block text-sm font-medium mb-2">Email *</label>
-                <input type="email" id="email" name="email" required
-                  class="w-full px-4 py-3 bg-black/30 border border-gray-600 rounded-lg focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 transition-all"
-                  placeholder="your.email@example.com">
+        <div class="contact-form-container">
+          <div class="form-card">
+            <h2 class="form-title">Send Us a Message</h2>
+            <form action="https://formspree.io/f/your_form_id" method="POST" class="contact-form">
+              <div class="form-group">
+                <label for="name" class="form-label">Full Name *</label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  name="name" 
+                  required 
+                  class="form-input"
+                  placeholder="Your full name"
+                >
               </div>
-              <div>
-                <label for="phone" class="block text-sm font-medium mb-2">Phone</label>
-                <input type="tel" id="phone" name="phone"
-                  class="w-full px-4 py-3 bg-black/30 border border-gray-600 rounded-lg focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 transition-all"
-                  placeholder="+256 XXX XXX XXX">
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="email" class="form-label">Email *</label>
+                  <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    required 
+                    class="form-input"
+                    placeholder="your.email@example.com"
+                  >
+                </div>
+                <div class="form-group">
+                  <label for="phone" class="form-label">Phone</label>
+                  <input 
+                    type="tel" 
+                    id="phone" 
+                    name="phone" 
+                    class="form-input"
+                    placeholder="+256 XXX XXX XXX"
+                  >
+                </div>
               </div>
-            </div>
 
-            <div>
-              <label for="service" class="block text-sm font-medium mb-2">Service Needed</label>
-              <select id="service" name="service"
-                class="w-full px-4 py-3 bg-black/30 border border-gray-600 rounded-lg focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 transition-all">
-                <option value="">Select a service</option>
-                <option value="embroidery">Embroidery</option>
-                <option value="printing">T-shirt Printing</option>
-                <option value="labeling">Labeling & Branding</option>
-                <option value="digitizing">Digitizing</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
+              <div class="form-group">
+                <label for="service" class="form-label">Service Needed</label>
+                <select 
+                  id="service" 
+                  name="service" 
+                  class="form-select"
+                >
+                  <option value="">Select a service</option>
+                  <option value="embroidery">Embroidery</option>
+                  <option value="printing">T-shirt Printing</option>
+                  <option value="labeling">Labeling & Branding</option>
+                  <option value="digitizing">Digitizing</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
 
-            <div>
-              <label for="message" class="block text-sm font-medium mb-2">Project Details *</label>
-              <textarea id="message" name="message" rows="5" required
-                class="w-full px-4 py-3 bg-black/30 border border-gray-600 rounded-lg focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 transition-all"
-                placeholder="Tell us about your project, quantity, timeline, and any specific requirements..."></textarea>
-            </div>
+              <div class="form-group">
+                <label for="message" class="form-label">Project Details *</label>
+                <textarea 
+                  id="message" 
+                  name="message" 
+                  rows="5" 
+                  required 
+                  class="form-textarea"
+                  placeholder="Tell us about your project, quantity, timeline, and any specific requirements..."
+                ></textarea>
+              </div>
 
-            <button type="submit"
-              class="w-full bg-yellow-400 text-black font-semibold py-3 px-6 rounded-lg hover:bg-yellow-500 transition-colors flex items-center justify-center">
-              <i class="fas fa-paper-plane mr-2"></i>
-              Send Message
-            </button>
-          </form>
+              <button type="submit" class="form-submit">
+                <i class="fas fa-paper-plane"></i>
+                Send Message
+              </button>
+            </form>
+          </div>
         </div>
       </div>
 
       <!-- Map Section -->
-      <div class="bg-white/5 rounded-lg overflow-hidden">
-        <div class="p-6">
-          <h2 class="text-2xl font-semibold mb-4 flex items-center">
-            <i class="fas fa-map-marked-alt text-yellow-400 mr-3"></i>
+      <div class="map-section">
+        <div class="map-card">
+          <h2 class="map-title">
+            <i class="fas fa-map-marked-alt"></i>
             Find Us
           </h2>
-          <div
-            class="w-full h-64 bg-gradient-to-br from-purple-900 to-black rounded-lg flex flex-col items-center justify-center text-center p-4">
-            <i class="fas fa-map-marker-alt text-yellow-400 text-4xl mb-4"></i>
-            <p class="text-lg font-semibold">Matugga Center</p>
-            <p class="text-gray-300">Near Lwadda School</p>
-            <p class="text-sm text-gray-400 mt-2">Google Maps integration available</p>
+          <div class="map-placeholder">
+            <i class="fas fa-map-marker-alt"></i>
+            <p class="map-location">Matugga Center</p>
+            <p class="map-address">Near Lwadda School</p>
+            <p class="map-note">Google Maps integration available</p>
           </div>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
-  <div id="site-footer"></div>
-  <script src="./assets/js/main.js"></script>
+</main>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <!-- Brand Information -->
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="logo-icon">
+            <img src="./assets/img/logo.svg" alt="Classic Brand Co" class="logo-img">
+          </div>
+        </div>
+        <p class="footer-description">
+          Professional embroidery, printing, and labeling services. 
+          Transforming your brand vision into high-quality finished products.
+        </p>
+        <div class="footer-info">
+          <p>📍 Matugga Center (near Lwadda School)</p>
+          <p>🕒 Mon-Sat: 8:00 AM - 6:00 PM</p>
+        </div>
+      </div>
+
+      <!-- Contact Information -->
+      <div class="footer-contact">
+        <h4 class="footer-heading">Get In Touch</h4>
+        <div class="contact-links">
+          <a href="https://wa.me/256785475049" class="contact-link">
+            <div class="contact-icon whatsapp">
+              <i class="fab fa-whatsapp"></i>
+            </div>
+            <div class="contact-info">
+              <div class="contact-type">WhatsApp</div>
+              <div class="contact-detail">+256 785 475 049</div>
+            </div>
+          </a>
+          
+          <a href="tel:+256759921866" class="contact-link">
+            <div class="contact-icon phone">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div class="contact-info">
+              <div class="contact-type">Phone Call</div>
+              <div class="contact-detail">+256 759 921 866</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-links">
+        <h4 class="footer-heading">Quick Links</h4>
+        <div class="links-grid">
+          <a href="./index.html" class="footer-link">Home</a>
+          <a href="./index.html#services" class="footer-link">Services</a>
+          <a href="./index.html#portfolio" class="footer-link">Portfolio</a>
+          <a href="./contact.html" class="footer-link">Contact</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-copyright">
+      <div class="container">
+        <p>© <span id="year">2024</span> Classic Brand Co. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- External JavaScript -->
+<script src="./assets/js/main.js"></script>
 </body>
-
 </html>
