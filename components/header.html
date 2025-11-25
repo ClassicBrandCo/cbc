@@ -1,55 +1,72 @@
 <!-- components/header.html -->
-<header class="bg-gradient-to-r from-indigo-900 via-purple-700 to-black text-white fixed w-full z-40 shadow-lg">
-  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+<header class="bg-dark-900/95 backdrop-blur-md border-b border-gray-800 text-white fixed w-full z-50 transition-all duration-600">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
     <!-- Logo -->
-    <!-- In header.html - update the logo section -->
-    <a href="./index.html" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
-      <div class="w-12 h-12 bg-yellow-400 rounded-lg flex items-center justify-center shadow-md">
-        <!-- SVG Logo or Icon -->
-        <img src="assets/img/logo.svg" />
+    <a href="./index.html" class="flex items-center gap-3 group">
+      <div class="w-10 h-10 bg-gold-400 rounded-lg flex items-center justify-center transition-transform duration-600 group-hover:scale-105">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 8H18V16C18 18.2091 16.2091 20 14 20H10C7.79086 20 6 18.2091 6 16V8Z" fill="#0a0a0a" />
+          <path d="M10 20V22M14 20V22" stroke="#0a0a0a" stroke-width="2" />
+          <path d="M12 8L14 4L10 4L12 8Z" fill="#0a0a0a" />
+        </svg>
       </div>
       <div>
-        <h1 class="text-lg font-bold tracking-tight">Classic Brand Co</h1>
-        <p class="text-xs opacity-80 tracking-wide">Embroidery · Printing · Labeling</p>
+        <h1 class="text-lg font-light tracking-tight">Classic Brand Co</h1>
+        <p class="text-xs text-gray-400 tracking-wide">Embroidery · Printing · Labeling</p>
       </div>
     </a>
 
     <!-- Desktop Navigation -->
-    <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
-      <a href="./index.html" class="hover:text-yellow-400 transition-colors duration-200 py-2">Home</a>
-      <a href="./index.html#services" class="hover:text-yellow-400 transition-colors duration-200 py-2">Services</a>
-      <a href="./index.html#portfolio" class="hover:text-yellow-400 transition-colors duration-200 py-2">Portfolio</a>
-      <a href="./contact.html"
-        class="bg-yellow-400 text-black px-4 py-2 rounded-lg hover:bg-yellow-500 transition-all duration-200 font-semibold shadow-md hover:shadow-lg">
+    <nav class="hidden md:flex items-center gap-8 text-sm font-light">
+      <a href="./index.html" class="text-gray-300 hover:text-white transition-colors duration-400 py-2 relative group">
+        Home
+        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gold-400 transition-all duration-400 group-hover:w-full"></span>
+      </a>
+      <a href="./index.html#services" class="text-gray-300 hover:text-white transition-colors duration-400 py-2 relative group">
+        Services
+        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gold-400 transition-all duration-400 group-hover:w-full"></span>
+      </a>
+      <a href="./index.html#portfolio" class="text-gray-300 hover:text-white transition-colors duration-400 py-2 relative group">
+        Portfolio
+        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gold-400 transition-all duration-400 group-hover:w-full"></span>
+      </a>
+      <a href="./contact.html" class="btn-premium btn-premium-solid text-sm">
         Contact Us
       </a>
+
+      <button class="theme-toggle p-2">
+        <i class="fas fa-moon"></i>
+      </button>
     </nav>
 
-    <!-- Mobile Menu Toggle -->
-    <button id="mobile-menu-toggle" class="md:hidden p-2 text-white hover:bg-white/10 rounded-lg transition-colors">
-      <i class="fas fa-bars text-lg"></i>
-    </button>
+    <div class="flex items-center gap-2 md:hidden">
+      <button class="theme-toggle p-2">
+        <i class="fas fa-moon"></i>
+      </button>
+      <button id="mobile-menu-toggle" class="p-2 text-gray-300 hover:text-white transition-colors duration-400">
+        <i class="fas fa-bars text-lg"></i>
+      </button>
+    </div>
   </div>
 
-  <!-- Mobile Menu -->
-  <div id="mobile-menu" class="md:hidden hidden bg-black/95 backdrop-blur-sm border-t border-white/10">
-    <div class="px-4 py-4 flex flex-col gap-1">
-      <a href="./index.html" class="py-3 px-4 hover:bg-white/10 rounded-lg transition-colors flex items-center">
-        <i class="fas fa-home mr-3 w-5 text-center"></i>
+  <div id="mobile-menu" class="mobile-menu-premium md:hidden bg-dark-900/95 backdrop-blur-md border-t border-gray-800">
+    <div class="px-6 py-6 flex flex-col gap-2">
+      <a href="./index.html" class="py-3 px-4 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-400 flex items-center group">
+        <i class="fas fa-home mr-3 w-5 text-center text-gold-400"></i>
         Home
+        <i class="fas fa-chevron-right ml-auto text-xs text-gray-500 group-hover:text-gold-400 transition-colors"></i>
       </a>
-      <a href="./index.html#services"
-        class="py-3 px-4 hover:bg-white/10 rounded-lg transition-colors flex items-center">
-        <i class="fas fa-concierge-bell mr-3 w-5 text-center"></i>
+      <a href="./index.html#services" class="py-3 px-4 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-400 flex items-center group">
+        <i class="fas fa-concierge-bell mr-3 w-5 text-center text-gold-400"></i>
         Services
+        <i class="fas fa-chevron-right ml-auto text-xs text-gray-500 group-hover:text-gold-400 transition-colors"></i>
       </a>
-      <a href="./index.html#portfolio"
-        class="py-3 px-4 hover:bg-white/10 rounded-lg transition-colors flex items-center">
-        <i class="fas fa-images mr-3 w-5 text-center"></i>
+      <a href="./index.html#portfolio" class="py-3 px-4 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-400 flex items-center group">
+        <i class="fas fa-images mr-3 w-5 text-center text-gold-400"></i>
         Portfolio
+        <i class="fas fa-chevron-right ml-auto text-xs text-gray-500 group-hover:text-gold-400 transition-colors"></i>
       </a>
-      <a href="./contact.html"
-        class="bg-yellow-400 text-black py-3 px-4 rounded-lg font-semibold text-center mt-2 hover:bg-yellow-500 transition-colors flex items-center justify-center">
+      <a href="./contact.html" class="btn-premium btn-premium-solid mt-4 text-center justify-center">
         <i class="fas fa-envelope mr-2"></i>
         Contact Us
       </a>
@@ -57,5 +74,4 @@
   </div>
 </header>
 
-<!-- Spacer for fixed header -->
-<div class="h-16"></div>
+<div class="h-20"></div>

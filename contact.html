@@ -1,201 +1,182 @@
-<!-- contact.html -->
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Contact — Classic Brand Co</title>
-  <meta name="description" content="Contact Classic Brand Co for embroidery, printing & labeling services. Visit us at Matugga Center or message on WhatsApp: 0785 475 049" />
-  
-  <!-- External CSS -->
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta name="description"
+    content="Contact Classic Brand Co for premium embroidery, printing & labeling services. Professional craftsmanship for your brand." />
+  <meta property="og:title" content="Contact Classic Brand Co" />
+  <meta property="og:description"
+    content="Reach Classic Brand Co for professional embroidery, printing, labels and digitizing services. Quality craftsmanship guaranteed." />
+  <meta property="og:image" content="./assets/img/og-image.jpg" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: {
+              400: '#f6c14e',
+              500: '#d4a742',
+            },
+            dark: {
+              900: '#0a0a0a',
+              950: '#050505'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
-<body>
 
-<!-- Header -->
-<header class="site-header">
-  <div class="container header-container">
-    <!-- Logo -->
-    <a href="./index.html" class="logo-link">
-      <div class="logo-icon">
-        <img src="./assets/img/logo.svg" alt="Classic Brand Co" class="logo-img">
+<body class="bg-dark-950 text-white font-sans antialiased">
+
+  <div id="site-header"></div>
+
+  <main class="pt-20">
+
+    <section class="py-20 px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-light mb-6 fade-in-up">Get In Touch</h1>
+        <p class="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed fade-in-up" style="animation-delay: 0.2s;">
+          Ready to start your project? Contact us for professional embroidery, printing, 
+          and labeling services. Let's bring your vision to life.
+        </p>
       </div>
-      <div class="logo-text">
-        <h1 class="logo-title">Classic Brand Co</h1>
-        <p class="logo-subtitle">Embroidery · Printing · Labeling</p>
-      </div>
-    </a>
+    </section>
 
-    <!-- Desktop Navigation -->
-    <nav class="desktop-nav">
-      <a href="./index.html" class="nav-link">Home</a>
-      <a href="./index.html#services" class="nav-link">Services</a>
-      <a href="./index.html#portfolio" class="nav-link">Portfolio</a>
-      <a href="./contact.html" class="nav-button">Contact Us</a>
-    </nav>
+    <section class="py-12 px-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-12">
 
-    <!-- Mobile Menu Toggle -->
-    <button id="mobile-menu-toggle" class="mobile-toggle">
-      <i class="fas fa-bars"></i>
-    </button>
-  </div>
+          <div class="space-y-8">
 
-  <!-- Mobile Menu -->
-  <div id="mobile-menu" class="mobile-menu hidden">
-    <div class="mobile-nav">
-      <a href="./index.html" class="mobile-nav-link">
-        <i class="fas fa-home"></i>
-        Home
-      </a>
-      <a href="./index.html#services" class="mobile-nav-link">
-        <i class="fas fa-concierge-bell"></i>
-        Services
-      </a>
-      <a href="./index.html#portfolio" class="mobile-nav-link">
-        <i class="fas fa-images"></i>
-        Portfolio
-      </a>
-      <a href="./contact.html" class="mobile-nav-button">
-        <i class="fas fa-envelope"></i>
-        Contact Us
-      </a>
-    </div>
-  </div>
-</header>
-
-<!-- Spacer for fixed header -->
-<div class="header-spacer"></div>
-
-<main class="main-content">
-
-  <!-- CONTACT HERO -->
-  <section class="contact-hero">
-    <div class="container text-center">
-      <h1 class="contact-title">Contact Classic Brand Co</h1>
-      <p class="contact-description">
-        Get in touch for professional embroidery, printing, and labeling services. 
-        We're here to bring your brand vision to life.
-      </p>
-    </div>
-  </section>
-
-  <!-- CONTACT CONTENT -->
-  <section class="contact-content">
-    <div class="container">
-      <div class="contact-grid">
-        <!-- Contact Information -->
-        <div class="contact-info">
-          <div class="info-card">
-            <div class="info-icon">
-              <i class="fas fa-map-marker-alt"></i>
-            </div>
-            <h3 class="info-title">Visit Our Location</h3>
-            <p class="info-detail">
-              <strong>Matugga Center</strong><br>
-              Near Lwadda School<br>
-              Open: Monday - Saturday, 8:00 AM - 6:00 PM
-            </p>
-          </div>
-
-          <div class="info-card">
-            <div class="info-icon">
-              <i class="fas fa-phone-alt"></i>
-            </div>
-            <h3 class="info-title">Call or WhatsApp</h3>
-            <div class="contact-links">
-              <a href="https://wa.me/256785475049" class="contact-link-item">
-                <div class="contact-link-icon whatsapp">
-                  <i class="fab fa-whatsapp"></i>
+            <div class="card-premium p-8 section-transition">
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 bg-gold-400 rounded-full flex items-center justify-center flex-shrink-0 transition-transform duration-600 hover:scale-110">
+                  <i class="fas fa-map-marker-alt text-dark-900 text-lg"></i>
                 </div>
-                <div class="contact-link-info">
-                  <div class="contact-type">WhatsApp</div>
-                  <div class="contact-number">0785 475 049</div>
+                <div>
+                  <h3 class="text-xl font-light mb-3 gradient-text-premium">Visit Our Studio</h3>
+                  <p class="text-gray-300 leading-relaxed">
+                    <strong class="text-white">Matugga Center</strong><br>
+                    Near Lwadda School<br>
+                    Kampala, Uganda
+                  </p>
+                  <p class="text-sm text-gray-400 mt-3">
+                    Open: Monday - Saturday, 8:00 AM - 6:00 PM
+                  </p>
                 </div>
-              </a>
-              
-              <a href="tel:+256759921866" class="contact-link-item">
-                <div class="contact-link-icon phone">
-                  <i class="fas fa-phone"></i>
-                </div>
-                <div class="contact-link-info">
-                  <div class="contact-type">Phone Call</div>
-                  <div class="contact-number">0759 921 866</div>
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <div class="info-card">
-            <div class="info-icon">
-              <i class="fas fa-clock"></i>
-            </div>
-            <h3 class="info-title">Business Hours</h3>
-            <div class="business-hours">
-              <div class="hour-item">
-                <span class="day">Monday - Friday:</span>
-                <span class="time">8:00 AM - 6:00 PM</span>
               </div>
-              <div class="hour-item">
-                <span class="day">Saturday:</span>
-                <span class="time">8:00 AM - 4:00 PM</span>
+            </div>
+
+            <div class="card-premium p-8 section-transition" style="transition-delay: 0.1s;">
+              <div class="space-y-6">
+                <h3 class="text-xl font-light mb-4 gradient-text-premium">Contact Methods</h3>
+
+                <a href="https://wa.me/256785475049" 
+                   class="flex items-center gap-4 group p-4 rounded-lg transition-all duration-400 hover:bg-white/5">
+                  <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center transition-transform duration-600 group-hover:scale-110">
+                    <i class="fab fa-whatsapp text-white text-lg"></i>
+                  </div>
+                  <div class="flex-1">
+                    <div class="font-medium text-white">WhatsApp</div>
+                    <div class="text-gray-400">+256 785 475 049</div>
+                  </div>
+                  <i class="fas fa-chevron-right text-gray-500 group-hover:text-gold-400 transition-colors"></i>
+                </a>
+
+                <a href="tel:+256759921866" 
+                   class="flex items-center gap-4 group p-4 rounded-lg transition-all duration-400 hover:bg-white/5">
+                  <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center transition-transform duration-600 group-hover:scale-110">
+                    <i class="fas fa-phone text-white text-lg"></i>
+                  </div>
+                  <div class="flex-1">
+                    <div class="font-medium text-white">Phone Call</div>
+                    <div class="text-gray-400">+256 759 921 866</div>
+                  </div>
+                  <i class="fas fa-chevron-right text-gray-500 group-hover:text-gold-400 transition-colors"></i>
+                </a>
+
+                <div class="flex items-center gap-4 p-4 rounded-lg">
+                  <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center">
+                    <i class="fas fa-envelope text-white text-lg"></i>
+                  </div>
+                  <div>
+                    <div class="font-medium text-white">Email</div>
+                    <div class="text-gray-400">info@classicbrand.co</div>
+                  </div>
+                </div>
               </div>
-              <div class="hour-item">
-                <span class="day">Sunday:</span>
-                <span class="time">Closed</span>
+            </div>
+
+            <div class="card-premium p-8 section-transition" style="transition-delay: 0.2s;">
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 bg-gold-400 rounded-full flex items-center justify-center flex-shrink-0 transition-transform duration-600 hover:scale-110">
+                  <i class="fas fa-clock text-dark-900 text-lg"></i>
+                </div>
+                <div>
+                  <h3 class="text-xl font-light mb-4 gradient-text-premium">Business Hours</h3>
+                  <div class="space-y-2 text-gray-300">
+                    <div class="flex justify-between items-center py-2 border-b border-gray-800">
+                      <span>Monday - Friday</span>
+                      <span class="text-gold-400">8:00 AM - 6:00 PM</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-gray-800">
+                      <span>Saturday</span>
+                      <span class="text-gold-400">8:00 AM - 4:00 PM</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2">
+                      <span>Sunday</span>
+                      <span class="text-gray-500">Closed</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Contact Form -->
-        <div class="contact-form-container">
-          <div class="form-card">
-            <h2 class="form-title">Send Us a Message</h2>
-            <form action="https://formspree.io/f/your_form_id" method="POST" class="contact-form">
-              <div class="form-group">
-                <label for="name" class="form-label">Full Name *</label>
-                <input 
-                  type="text" 
-                  id="name" 
-                  name="name" 
-                  required 
-                  class="form-input"
-                  placeholder="Your full name"
-                >
+          <div class="card-premium p-8 section-transition" style="transition-delay: 0.3s;">
+            <h2 class="text-2xl font-light mb-2">Send Us a Message</h2>
+            <p class="text-gray-400 mb-8">Let's discuss your project requirements</p>
+            
+            <form class="form-premium space-y-6">
+              <div>
+                <label for="name" class="block text-sm font-medium mb-3 text-gray-300">Full Name *</label>
+                <input type="text" id="name" name="name" required
+                  class="w-full rounded-lg"
+                  placeholder="Your full name">
               </div>
 
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="email" class="form-label">Email *</label>
-                  <input 
-                    type="email" 
-                    id="email" 
-                    name="email" 
-                    required 
-                    class="form-input"
-                    placeholder="your.email@example.com"
-                  >
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label for="email" class="block text-sm font-medium mb-3 text-gray-300">Email *</label>
+                  <input type="email" id="email" name="email" required
+                    class="w-full rounded-lg"
+                    placeholder="your.email@example.com">
                 </div>
-                <div class="form-group">
-                  <label for="phone" class="form-label">Phone</label>
-                  <input 
-                    type="tel" 
-                    id="phone" 
-                    name="phone" 
-                    class="form-input"
-                    placeholder="+256 XXX XXX XXX"
-                  >
+                <div>
+                  <label for="phone" class="block text-sm font-medium mb-3 text-gray-300">Phone</label>
+                  <input type="tel" id="phone" name="phone"
+                    class="w-full rounded-lg"
+                    placeholder="+256 XXX XXX XXX">
                 </div>
               </div>
 
-              <div class="form-group">
-                <label for="service" class="form-label">Service Needed</label>
-                <select 
-                  id="service" 
-                  name="service" 
-                  class="form-select"
-                >
+              <div>
+                <label for="service" class="block text-sm font-medium mb-3 text-gray-300">Service Needed</label>
+                <select id="service" name="service" class="w-full rounded-lg">
                   <option value="">Select a service</option>
                   <option value="embroidery">Embroidery</option>
                   <option value="printing">T-shirt Printing</option>
@@ -205,123 +186,64 @@
                 </select>
               </div>
 
-              <div class="form-group">
-                <label for="message" class="form-label">Project Details *</label>
-                <textarea 
-                  id="message" 
-                  name="message" 
-                  rows="5" 
-                  required 
-                  class="form-textarea"
-                  placeholder="Tell us about your project, quantity, timeline, and any specific requirements..."
-                ></textarea>
+              <div>
+                <label for="message" class="block text-sm font-medium mb-3 text-gray-300">Project Details *</label>
+                <textarea id="message" name="message" rows="5" required
+                  class="w-full rounded-lg"
+                  placeholder="Tell us about your project, quantity, timeline, and any specific requirements..."></textarea>
               </div>
 
-              <button type="submit" class="form-submit">
-                <i class="fas fa-paper-plane"></i>
+              <button type="submit" class="btn-premium btn-premium-solid w-full justify-center">
+                <i class="fas fa-paper-plane mr-2"></i>
                 Send Message
               </button>
             </form>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- Map Section -->
-      <div class="map-section">
-        <div class="map-card">
-          <h2 class="map-title">
-            <i class="fas fa-map-marked-alt"></i>
-            Find Us
-          </h2>
-          <div class="map-placeholder">
-            <i class="fas fa-map-marker-alt"></i>
-            <p class="map-location">Matugga Center</p>
-            <p class="map-address">Near Lwadda School</p>
-            <p class="map-note">Google Maps integration available</p>
-          </div>
+    <section class="py-20 px-6 bg-dark-900">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-light mb-4 section-transition">Find Our Studio</h2>
+          <p class="text-gray-400 text-lg max-w-2xl mx-auto section-transition" style="transition-delay: 0.1s;">
+            Visit us at Matugga Center for a personal consultation about your project
+          </p>
         </div>
-      </div>
-    </div>
-  </section>
 
-</main>
-
-<!-- Footer -->
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <!-- Brand Information -->
-      <div class="footer-brand">
-        <div class="footer-logo">
-          <div class="logo-icon">
-            <img src="./assets/img/logo.svg" alt="Classic Brand Co" class="logo-img">
-          </div>
-          <div>
-            <h3 class="footer-title">Classic Brand Co</h3>
-            <p class="footer-subtitle">Embroidery · Printing · Labeling</p>
-          </div>
-        </div>
-        <p class="footer-description">
-          Professional T-shirt printing • Embroidery • Labeling • Digitizing
-        </p>
-        <div class="footer-info">
-          <p>📍 Matugga Center (near Lwadda School)</p>
-          <p>🕒 Mon-Sat: 8:00 AM - 6:00 PM</p>
-        </div>
-      </div>
-
-      <!-- Contact Information -->
-      <div class="footer-contact">
-        <h4 class="footer-heading">Contact Info</h4>
-        <div class="contact-links">
-          <div class="contact-info-item">
-            <i class="fab fa-whatsapp"></i>
-            <div>
-              <div class="contact-type">WhatsApp</div>
-              <div class="contact-detail">0785 475 049</div>
-            </div>
-          </div>
-          
-          <div class="contact-info-item">
-            <i class="fas fa-phone"></i>
-            <div>
-              <div class="contact-type">Call</div>
-              <div class="contact-detail">0759 921 866</div>
+        <div class="card-premium overflow-hidden section-transition" style="transition-delay: 0.2s;">
+          <div class="relative">
+            <img 
+              data-src="./assets/img/location/map-placeholder.jpg" 
+              alt="Classic Brand Company location at Matugga Center near Lwadda School"
+              class="w-full h-96 object-cover image-premium image-loading"
+            >
+            <div class="absolute inset-0 bg-dark-950/40 flex flex-col items-center justify-center text-center p-8">
+              <div class="w-16 h-16 bg-gold-400 rounded-full flex items-center justify-center mb-4">
+                <i class="fas fa-map-marker-alt text-dark-900 text-xl"></i>
+              </div>
+              <h3 class="text-2xl font-light text-white mb-2">Matugga Center</h3>
+              <p class="text-gray-300">Near Lwadda School</p>
+              <p class="text-sm text-gray-400 mt-4">Visit our studio for a personal consultation</p>
             </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- Social Media -->
-      <div class="footer-social">
-        <h4 class="footer-heading">Follow Us</h4>
-        <div class="social-links">
-          <a href="#" class="social-link">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <a href="#" class="social-link">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="#" class="social-link">
-            <i class="fab fa-tiktok"></i>
-          </a>
-          <a href="#" class="social-link">
-            <i class="fab fa-whatsapp"></i>
-          </a>
-        </div>
-      </div>
-    </div>
+  </main>
 
-    <!-- Copyright -->
-    <div class="footer-copyright">
-      <div class="container">
-        <p>© <span id="year">2025</span> Classic Brand Co. All rights reserved.</p>
-      </div>
+  <div id="site-footer"></div>
+
+  <div id="page-loader" class="fixed inset-0 bg-dark-950 z-50 flex items-center justify-center transition-opacity duration-600">
+    <div class="text-center">
+      <div class="loading-premium mx-auto mb-4"></div>
+      <p class="text-gray-400 text-sm">Loading</p>
     </div>
   </div>
-</footer>
 
-<!-- External JavaScript -->
-<script src="./assets/js/main.js"></script>
+  <script src="./assets/js/main.js"></script>
 </body>
+
 </html>

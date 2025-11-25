@@ -1,106 +1,120 @@
-<!-- components/footer.html -->
-<footer class="bg-black text-gray-300 mt-16">
-  <div class="max-w-6xl mx-auto px-6 py-12 grid md:grid-cols-3 gap-8">
-    <!-- Brand Information -->
-    <div class="space-y-4">
-      <div class="flex items-center gap-3">
-        <div class="w-12 h-12 bg-yellow-400 rounded-lg flex items-center justify-center">
-          <i class="fas fa-tshirt text-black text-xl"></i>
+<footer class="bg-dark-900 border-t border-gray-800 text-gray-300 mt-20">
+  <div class="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-12">
+
+    <div class="space-y-6">
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-12 bg-gold-400 rounded-lg flex items-center justify-center transition-transform duration-600 hover:scale-105">
+          <i class="fas fa-tshirt text-dark-900 text-xl"></i>
         </div>
         <div>
-          <h3 class="text-xl font-semibold text-white">Classic Brand Co</h3>
-          <p class="text-sm opacity-80">Quality Since 2024</p>
+          <h3 class="text-xl font-light text-white">Classic Brand Co</h3>
+          <p class="text-sm text-gray-400">Quality Since 2024</p>
         </div>
       </div>
-      <p class="text-sm leading-relaxed text-gray-400">
-        Professional embroidery, printing, and labeling services.
-        Transforming your brand vision into high-quality finished products.
+      <p class="text-sm leading-relaxed text-gray-400 max-w-md">
+        Professional embroidery, printing, and labeling services. 
+        Transforming your brand vision into exceptional quality products with precision craftsmanship.
       </p>
-      <div class="text-sm text-gray-500">
-        <p>📍 Matugga Center (near Lwadda School)</p>
-        <p>🕒 Mon-Sat: 8:00 AM - 6:00 PM</p>
+      <div class="text-sm text-gray-500 space-y-2">
+        <p class="flex items-center gap-2">
+          <i class="fas fa-map-marker-alt text-gold-400 text-xs"></i>
+          <span>Matugga Center (near Lwadda School)</span>
+        </p>
+        <p class="flex items-center gap-2">
+          <i class="fas fa-clock text-gold-400 text-xs"></i>
+          <span>Mon-Sat: 8:00 AM - 6:00 PM</span>
+        </p>
       </div>
     </div>
 
-    <!-- Contact Information -->
-    <div class="space-y-4">
-      <h4 class="font-semibold text-white text-lg mb-4">Get In Touch</h4>
-      <div class="space-y-3">
+    <div class="space-y-6">
+      <h4 class="font-light text-white text-lg">Get In Touch</h4>
+      <div class="space-y-4">
         <a href="https://wa.me/256785475049"
-          class="flex items-center gap-3 hover:text-yellow-400 transition-colors group">
-          <div
-            class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center group-hover:bg-green-600 transition-colors">
-            <i class="fab fa-whatsapp text-white"></i>
+          class="flex items-center gap-4 group p-3 rounded-lg transition-all duration-400 hover:bg-white/5">
+          <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center transition-transform duration-600 group-hover:scale-110">
+            <i class="fab fa-whatsapp text-white text-lg"></i>
           </div>
           <div>
-            <div class="font-medium">WhatsApp</div>
+            <div class="font-medium text-white">WhatsApp</div>
             <div class="text-sm text-gray-400">+256 785 475 049</div>
           </div>
+          <i class="fas fa-chevron-right ml-auto text-xs text-gray-500 group-hover:text-gold-400 transition-colors"></i>
         </a>
 
-        <a href="tel:+256759921866" class="flex items-center gap-3 hover:text-yellow-400 transition-colors group">
-          <div
-            class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center group-hover:bg-blue-600 transition-colors">
-            <i class="fas fa-phone text-white"></i>
+        <a href="tel:+256759921866" class="flex items-center gap-4 group p-3 rounded-lg transition-all duration-400 hover:bg-white/5">
+          <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center transition-transform duration-600 group-hover:scale-110">
+            <i class="fas fa-phone text-white text-lg"></i>
           </div>
           <div>
-            <div class="font-medium">Phone Call</div>
+            <div class="font-medium text-white">Phone Call</div>
             <div class="text-sm text-gray-400">+256 759 921 866</div>
           </div>
+          <i class="fas fa-chevron-right ml-auto text-xs text-gray-500 group-hover:text-gold-400 transition-colors"></i>
         </a>
 
-        <div class="flex items-center gap-3 text-gray-400">
-          <div class="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center">
-            <i class="fas fa-envelope text-white"></i>
+        <div class="flex items-center gap-4 p-3 rounded-lg">
+          <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center">
+            <i class="fas fa-envelope text-white text-lg"></i>
           </div>
           <div>
-            <div class="font-medium">Email</div>
-            <div class="text-sm">info@classicbrand.co</div>
+            <div class="font-medium text-white">Email</div>
+            <div class="text-sm text-gray-400">info@classicbrand.co</div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Quick Links & Social -->
-    <div class="space-y-4">
-      <h4 class="font-semibold text-white text-lg mb-4">Quick Links</h4>
-      <div class="grid grid-cols-2 gap-2 text-sm">
-        <a href="./index.html" class="hover:text-yellow-400 transition-colors py-1">Home</a>
-        <a href="./index.html#services" class="hover:text-yellow-400 transition-colors py-1">Services</a>
-        <a href="./index.html#portfolio" class="hover:text-yellow-400 transition-colors py-1">Portfolio</a>
-        <a href="./contact.html" class="hover:text-yellow-400 transition-colors py-1">Contact</a>
+    <div class="space-y-6">
+      <h4 class="font-light text-white text-lg">Quick Links</h4>
+      <div class="grid grid-cols-2 gap-3 text-sm">
+        <a href="./index.html" class="py-2 px-3 text-gray-400 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-400 group">
+          <i class="fas fa-chevron-right mr-2 text-xs text-gold-400"></i>
+          Home
+        </a>
+        <a href="./index.html#services" class="py-2 px-3 text-gray-400 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-400 group">
+          <i class="fas fa-chevron-right mr-2 text-xs text-gold-400"></i>
+          Services
+        </a>
+        <a href="./index.html#portfolio" class="py-2 px-3 text-gray-400 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-400 group">
+          <i class="fas fa-chevron-right mr-2 text-xs text-gold-400"></i>
+          Portfolio
+        </a>
+        <a href="./contact.html" class="py-2 px-3 text-gray-400 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-400 group">
+          <i class="fas fa-chevron-right mr-2 text-xs text-gold-400"></i>
+          Contact
+        </a>
       </div>
 
       <div class="pt-4">
-        <h5 class="font-semibold text-white mb-3">Follow Us</h5>
+        <h5 class="font-light text-white mb-4">Follow Us</h5>
         <div class="flex gap-3">
           <a href="#"
-            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-yellow-400 hover:text-black transition-all duration-200">
-            <i class="fab fa-facebook-f"></i>
+            class="w-12 h-12 bg-dark-800 rounded-full flex items-center justify-center transition-all duration-400 hover:bg-gold-400 hover:text-dark-900 hover:scale-110 group">
+            <i class="fab fa-facebook-f text-gray-400 group-hover:text-dark-900 transition-colors"></i>
           </a>
           <a href="#"
-            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-yellow-400 hover:text-black transition-all duration-200">
-            <i class="fab fa-instagram"></i>
+            class="w-12 h-12 bg-dark-800 rounded-full flex items-center justify-center transition-all duration-400 hover:bg-gold-400 hover:text-dark-900 hover:scale-110 group">
+            <i class="fab fa-instagram text-gray-400 group-hover:text-dark-900 transition-colors"></i>
           </a>
           <a href="#"
-            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-yellow-400 hover:text-black transition-all duration-200">
-            <i class="fab fa-tiktok"></i>
+            class="w-12 h-12 bg-dark-800 rounded-full flex items-center justify-center transition-all duration-400 hover:bg-gold-400 hover:text-dark-900 hover:scale-110 group">
+            <i class="fab fa-tiktok text-gray-400 group-hover:text-dark-900 transition-colors"></i>
           </a>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Copyright -->
   <div class="border-t border-gray-800">
-    <div class="max-w-6xl mx-auto px-6 py-6">
+    <div class="max-w-6xl mx-auto px-6 py-8">
       <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
-        <div>
-          © <span id="year"></span> Classic Brand Co. All rights reserved.
+        <div class="flex items-center gap-2">
+          <span>© <span id="year"></span> Classic Brand Co. All rights reserved.</span>
         </div>
         <div class="flex gap-6">
-          <a href="#" class="hover:text-yellow-400 transition-colors">Privacy Policy</a>
-          <a href="#" class="hover:text-yellow-400 transition-colors">Terms of Service</a>
+          <a href="#" class="hover:text-gold-400 transition-colors duration-400">Privacy Policy</a>
+          <a href="#" class="hover:text-gold-400 transition-colors duration-400">Terms of Service</a>
         </div>
       </div>
     </div>
