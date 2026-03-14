@@ -1,40 +1,123 @@
 <!doctype html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Classic Brand — Premium Embroidery & Printing Services</title>
-  <meta name="description"
-    content="Classic Brand — Professional embroidery, printing, digitizing and labeling services. Quality craftsmanship for your brand." />
-  <meta property="og:title" content="Classic Brand — Embroidery & Printing" />
-  <meta property="og:description"
-    content="Premium embroidery, printing, labeling & digitizing services from Matugga Center." />
-  <meta property="og:image" content="./assets/img/og-image.jpg" />
-
-  <meta name="theme-color" content="#0a0a0a" id="theme-meta">
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Classic Brand Co — Premium Embroidery & Printing 2026</title>
+  <meta name="description" content="Premium embroidery, printing & labeling. Matugga Center, Uganda.">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            gold: {
-              400: '#f6c14e',
-              500: '#d4a742',
-            },
-            dark: {
-              900: '#0a0a0a',
-              950: '#050505'
-            }
-          },
-          fontFamily: {
-            sans: ['Inter', 'system-ui', 'sans-serif'],
-          }
-        }
-      }
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- Firebase SDK -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+    import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyB11pbDasAg4yBi8aRBGAYvowkpvI", // ← replace with your full apiKey from earlier screenshot
+      authDomain: "classic-brand-co.firebaseapp.com",
+      projectId: "classic-brand-co",
+      storageBucket: "classic-brand-co.appspot.com",
+      messagingSenderId: "39527851830",
+      appId: "1:39527851830:web:928ac845fb8516ccb597"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    window.db = db;
+  </script>
+</head>
+<body class="bg-[#050505] text-white font-sans antialiased overflow-x-hidden">
+
+  <div id="site-header"></div>
+
+  <main>
+    <!-- HERO 2026 -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,#f6c14e10_0%,transparent_70%)]"></div>
+      <div class="max-w-5xl mx-auto text-center px-6 relative z-10">
+        <h1 class="text-7xl md:text-8xl font-light tracking-tighter mb-6 neon-gold">CLASSIC<br>BRAND CO</h1>
+        <p class="text-2xl text-gray-400 mb-12 max-w-2xl mx-auto">2026 craftsmanship. Embroidery • Printing • Labeling</p>
+        <div class="flex gap-4 justify-center">
+          <a href="#portfolio" class="px-10 py-5 bg-[#f6c14e] text-black font-medium rounded-2xl hover:scale-105 transition-all">View Work</a>
+          <a href="./contact.html" class="px-10 py-5 border border-[#f6c14e] rounded-2xl hover:bg-[#f6c14e]/10 transition-all">Get Quote</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="py-32 px-6">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-5xl font-light text-center mb-16">Services</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- 3 cards with tilt class -->
+          <div class="service-card tilt-card">… (same content as before, just add class="tilt-card")</div>
+          <!-- repeat for printing & labeling -->
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO – DYNAMIC + TILT -->
+    <section id="portfolio" class="py-32 px-6 bg-[#0a0a0a]">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-5xl font-light text-center mb-16">Our Work</h2>
+        <div id="projects-grid" class="grid md:grid-cols-3 gap-8"></div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-32 text-center">
+      <a href="./contact.html" class="inline-block px-12 py-6 text-2xl bg-gradient-to-r from-[#f6c14e] to-[#d4a742] text-black rounded-3xl hover:scale-110 transition-all">Start Your Project →</a>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <!-- Dynamic + Tilt script -->
+  <script type="module">
+    import { collection, getDocs } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+
+    const grid = document.getElementById('projects-grid');
+
+    async function loadProjects() {
+      const snapshot = await getDocs(collection(window.db, "projects"));
+      let html = '';
+      snapshot.forEach(doc => {
+        const p = doc.data();
+        html += `
+          <div class="tilt-card card-premium overflow-hidden group">
+            <div class="relative">
+              <img src="${p.imageUrl || './assets/img/portfolio/placeholder.jpg'}" class="w-full h-80 object-cover">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-all flex items-end p-8">
+                <div>
+                  <h3 class="text-2xl font-light">${p.title}</h3>
+                  <p class="text-gray-400">${p.description}</p>
+                </div>
+              </div>
+            </div>
+          </div>`;
+      });
+      grid.innerHTML = html || '<p class="text-center text-gray-500">No projects yet – add them in Firebase</p>';
     }
+
+    loadProjects();
+
+    // 2026 tilt effect
+    document.querySelectorAll('.tilt-card').forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width * 20 - 10;
+        const y = (e.clientY - rect.top) / rect.height * 20 - 10;
+        card.style.transform = `perspective(1000px) rotateX(${y}deg) rotateY(${x}deg)`;
+      });
+      card.addEventListener('mouseleave', () => card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)');
+    });
+  </script>
+
+  <script src="./assets/js/main.js"></script>
+</body>
+  </html>    }
   </script>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
