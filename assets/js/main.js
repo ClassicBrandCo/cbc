@@ -1,40 +1,28 @@
-// assets/js/main.js - FIXED VERSION
-class PremiumAnimations {
-    constructor() {
-      this.observer = null;
-      this.currentTheme = 'dark';
-      this.init();
-    }
-  
-    init() {
-      this.loadComponents();
-      this.setupIntersectionObserver();
-      this.setupSmoothScrolling();
-      this.setupPageTransitions();
-      this.setupMobileMenu();
-      this.setupFormInteractions();
-      this.setupThemeToggle();
-    }
-  
-    async loadComponents() {
-      try {
-        await this.loadComponent('site-header', 'header.html');
-        await this.loadComponent('site-footer', 'footer.html');
-        this.initializeLoadedContent();
-      } catch (error) {
-        console.log('Components loaded successfully');
-      }
-    }
-  
-    async loadComponent(containerId, filename) {
-      const container = document.getElementById(containerId);
-      if (!container) {
-        console.error(`Container #${containerId} not found`);
-        return;
-      }
-  
-      const paths = [
-        `./components/${filename}`,
+// Main JS - 2026 enhancements (tilt already in index.html script, this can be for global stuff)
+
+document.addEventListener('DOMContentLoaded', () => {
+  console.log('Classic Brand Co site loaded - 2026 edition');
+
+  // Optional: smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+
+  // Form submit placeholder (later connect to Firestore)
+  const form = document.querySelector('form');
+  if (form) {
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      alert('Message sent! We will get back to you soon.');
+      form.reset();
+    });
+  }
+});        `./components/${filename}`,
         `./${filename}`,
         `../components/${filename}`,
         `../${filename}`,
