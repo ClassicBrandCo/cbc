@@ -1,40 +1,147 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Classic Brand Co — Premium Embroidery & Printing 2026</title>
-  <meta name="description" content="Premium embroidery, printing & labeling. Matugga Center, Uganda.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Classic Brand Co — Premium Embroidery & Printing</title>
+  <meta name="description" content="Premium embroidery, printing, digitizing and labeling services in Matugga, Uganda. Quality craftsmanship for uniforms, apparel, events and brands."/>
+  
+  <!-- Tailwind via CDN for quick modern styling -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-  <link rel="stylesheet" href="./assets/css/style.css">
+  <!-- Font Awesome icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <!-- Your existing style sheet (keep if you have custom, or remove if using only Tailwind) -->
+  <link rel="stylesheet" href="./assets/css/style.css"/>
 
-  <!-- Firebase SDK -->
+  <!-- Firebase SDK (modular) -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
     import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
 
     const firebaseConfig = {
-      apiKey: "AIzaSyB11pbDasAg4yBi8aRBGAYvowkpvI", // ← replace with your full apiKey from earlier screenshot
+      apiKey: "AIzaSyB11pbDasAg4yBi8aRBGAYvowkpvI", // REPLACE THIS LINE WITH YOUR FULL CONFIG FROM FIREBASE CONSOLE
       authDomain: "classic-brand-co.firebaseapp.com",
       projectId: "classic-brand-co",
       storageBucket: "classic-brand-co.appspot.com",
       messagingSenderId: "39527851830",
-      appId: "1:39527851830:web:928ac845fb8516ccb597"
+      appId: "1:39527851830:web:928ac845fb8516ccb597",
+      measurementId: "G-DM42B9VQZo" // optional
     };
 
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
     window.db = db;
   </script>
+
+  <style>
+    /* 2026 modern upgrades: neon-gold, glass, tilt hover */
+    .neon-gold { text-shadow: 0 0 20px #f6c14e, 0 0 40px #f6c14e80; }
+    .glass { background: rgba(10,10,10,0.4); backdrop-filter: blur(16px); border: 1px solid rgba(246,193,78,0.2); }
+    .tilt-card { transition: transform 0.15s ease; transform-style: preserve-3d; }
+    .tilt-card:hover { transform: scale(1.05) translateY(-10px); }
+  </style>
 </head>
-<body class="bg-[#050505] text-white font-sans antialiased overflow-x-hidden">
+<body class="bg-black text-white min-h-screen font-sans">
 
-  <div id="site-header"></div>
+  <!-- Header / Nav (simple for now, add your components later if needed) -->
+  <header class="fixed top-0 w-full bg-black/80 backdrop-blur-md z-50 py-4">
+    <nav class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+      <h1 class="text-2xl font-bold neon-gold">Classic Brand Co</h1>
+      <div class="space-x-6">
+        <a href="#services" class="hover:text-[#f6c14e] transition">Services</a>
+        <a href="#portfolio" class="hover:text-[#f6c14e] transition">Portfolio</a>
+        <a href="./contact.html" class="bg-[#f6c14e] text-black px-6 py-2 rounded-full hover:bg-[#d4a742] transition">Contact</a>
+      </div>
+    </nav>
+  </header>
 
-  <main>
-    <!-- HERO 2026 -->
-    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <!-- Hero -->
+  <section class="min-h-screen flex items-center justify-center text-center px-6 pt-20">
+    <div>
+      <h1 class="text-6xl md:text-8xl font-extrabold neon-gold mb-6">CLASSIC BRAND CO</h1>
+      <p class="text-xl md:text-3xl text-gray-300 mb-12">Premium Embroidery • Printing • Labeling • Digitizing</p>
+      <a href="./contact.html" class="inline-block bg-[#f6c14e] text-black font-bold text-lg px-10 py-5 rounded-full hover:scale-105 transition">Start Your Project</a>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-24 px-6 bg-gradient-to-b from-black to-gray-900">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-5xl font-bold text-center mb-16 neon-gold">Our Services</h2>
+      <div class="grid md:grid-cols-3 gap-10">
+        <div class="glass p-10 rounded-3xl tilt-card">
+          <i class="fas fa-tshirt text-6xl text-[#f6c14e] mb-6 block text-center"></i>
+          <h3 class="text-3xl font-bold mb-4">Embroidery</h3>
+          <p class="text-gray-300">Precision stitching for uniforms, caps, apparel. Professional digitizing included.</p>
+        </div>
+        <div class="glass p-10 rounded-3xl tilt-card">
+          <i class="fas fa-print text-6xl text-[#f6c14e] mb-6 block text-center"></i>
+          <h3 class="text-3xl font-bold mb-4">Printing</h3>
+          <p class="text-gray-300">DTG & screen printing for events, merch, teams. Vibrant, durable results.</p>
+        </div>
+        <div class="glass p-10 rounded-3xl tilt-card">
+          <i class="fas fa-tag text-6xl text-[#f6c14e] mb-6 block text-center"></i>
+          <h3 class="text-3xl font-bold mb-4">Labeling</h3>
+          <p class="text-gray-300">Custom labels, branding packages. Full identity solutions for your business.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio – Dynamic from Firebase -->
+  <section id="portfolio" class="py-24 px-6">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-5xl font-bold text-center mb-16 neon-gold">Our Work</h2>
+      <div id="projects-grid" class="grid md:grid-cols-3 gap-10"></div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 text-center px-6">
+    <h2 class="text-4xl font-bold mb-8">Ready to Start?</h2>
+    <a href="./contact.html" class="inline-block bg-[#f6c14e] text-black font-bold text-xl px-12 py-6 rounded-full hover:scale-105 transition">Get In Touch</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 py-12 text-center">
+    <p>&copy; 2026 Classic Brand Co. All rights reserved. Matugga Center, Uganda.</p>
+  </footer>
+
+  <!-- Dynamic Portfolio Script -->
+  <script type="module">
+    import { collection, getDocs } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+
+    const grid = document.getElementById('projects-grid');
+
+    async function loadProjects() {
+      try {
+        const snap = await getDocs(collection(window.db, "projects"));
+        let html = '';
+        snap.forEach(doc => {
+          const data = doc.data();
+          html += `
+            <div class="glass rounded-3xl overflow-hidden tilt-card">
+              ${data.imageUrl ? `<img src="${data.imageUrl}" alt="${data.title}" class="w-full h-64 object-cover">` : '<div class="h-64 bg-gray-800 flex items-center justify-center text-gray-500">No Image</div>'}
+              <div class="p-8">
+                <h3 class="text-2xl font-bold mb-3">${data.title || 'Project'}</h3>
+                <p class="text-gray-300">${data.description || 'Custom embroidery/printing work'}</p>
+                ${data.link ? `<a href="${data.link}" class="text-[#f6c14e] mt-4 inline-block">View Details →</a>` : ''}
+              </div>
+            </div>
+          `;
+        });
+        grid.innerHTML = html || '<p class="text-center col-span-3 text-gray-500 text-xl">No projects added yet. Add them in Firebase Firestore → collection "projects"</p>';
+      } catch (e) {
+        console.error(e);
+        grid.innerHTML = '<p class="text-center col-span-3 text-red-400">Error loading projects. Check console.</p>';
+      }
+    }
+
+    loadProjects();
+  </script>
+
+</body>
+  </html>    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,#f6c14e10_0%,transparent_70%)]"></div>
       <div class="max-w-5xl mx-auto text-center px-6 relative z-10">
         <h1 class="text-7xl md:text-8xl font-light tracking-tighter mb-6 neon-gold">CLASSIC<br>BRAND CO</h1>
