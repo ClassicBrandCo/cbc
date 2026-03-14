@@ -12,29 +12,282 @@
     content="Premium embroidery, printing, labeling & digitizing services from Matugga Center." />
   <meta property="og:image" content="./assets/img/og-image.jpg" />
 
-<meta name="theme-color" content="#0a0a0a" id="theme-meta">
+  <meta name="theme-color" content="#0a0a0a" id="theme-meta">
 
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          gold: {
-            400: '#f6c14e',
-            500: '#d4a742',
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: {
+              400: '#f6c14e',
+              500: '#d4a742',
+            },
+            dark: {
+              900: '#0a0a0a',
+              950: '#050505'
+            }
           },
-          dark: {
-            900: '#0a0a0a',
-            950: '#050505'
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
           }
-        },
-        fontFamily: {
-          sans: ['Inter', 'system-ui', 'sans-serif'],
         }
       }
     }
-  }
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="./assets/css/style.css" />
+
+  <!-- Firebase SDK - add this block -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+    import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+
+    // === PASTE YOUR FULL FIREBASE CONFIG HERE ===
+    const firebaseConfig = {
+      apiKey: "AIzaSyXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX", // ← your full apiKey
+      authDomain: "classic-brand-co.firebaseapp.com",
+      projectId: "classic-brand-co",
+      storageBucket: "classic-brand-co.appspot.com",
+      messagingSenderId: "39527851830",
+      appId: "1:39527851830:web:928ac845fb8516ccb597",
+      measurementId: "G-DM42B9VQZo" // optional
+    };
+    // ============================================
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    window.db = db; // expose for the load function
+  </script>
+
+</head>
+
+<body class="bg-dark-950 text-white font-sans antialiased">
+
+  <div id="site-header"></div>
+
+  <main class="pt-20">
+  
+    <section id="home" class="min-h-screen flex items-center justify-center px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="mb-12 fade-in-up">
+          <img src="./assets/img/logo.svg" alt="Classic Brand Company" class="w-24 h-24 mx-auto mb-8 image-premium"
+            onerror="this.style.display='none'">
+        </div>
+        <h1 class="text-5xl md:text-6xl font-light mb-6 fade-in-up" style="animation-delay: 0.2s;">
+          Classic Brand Co
+        </h1>
+        
+        <p class="text-xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed fade-in-up" style="animation-delay: 0.4s;">
+          Premium embroidery, printing, and labeling services.
+          Transforming your vision into exceptional quality.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in-up" style="animation-delay: 0.6s;">
+          <a href="#portfolio" class="btn-premium btn-premium-solid">
+            View Portfolio
+          </a>
+          <a href="./contact.html" class="btn-premium">
+            Get Started
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="py-32 px-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-20">
+          <h2 class="text-3xl md:text-4xl font-light mb-4 section-transition">Our Services</h2>
+          <p class="text-gray-400 text-lg max-w-2xl mx-auto section-transition" style="transition-delay: 0.1s;">
+            Professional solutions for all your branding needs
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+
+          <div class="card-premium p-8 text-center group section-transition" style="transition-delay: 0.2s;">
+            <div class="w-16 h-16 bg-gold-400 rounded-full flex items-center justify-center mx-auto mb-6 transition-transform duration-600 group-hover:scale-110">
+              <i class="fas fa-tshirt text-dark-900 text-xl"></i>
+            </div>
+            <h3 class="text-xl font-medium mb-4 gradient-text-premium">Embroidery</h3>
+            <p class="text-gray-400 leading-relaxed">
+              Precision stitching for corporate uniforms, caps, and custom apparel.
+              Professional digitizing for flawless results.
+            </p>
+          </div>
+
+          <div class="card-premium p-8 text-center group section-transition" style="transition-delay: 0.3s;">
+            <div class="w-16 h-16 bg-gold-400 rounded-full flex items-center justify-center mx-auto mb-6 transition-transform duration-600 group-hover:scale-110">
+              <i class="fas fa-print text-dark-900 text-xl"></i>
+            </div>
+            <h3 class="text-xl font-medium mb-4 gradient-text-premium">Printing</h3>
+            <p class="text-gray-400 leading-relaxed">
+              High-quality DTG and screen printing for events, teams, and merchandise.
+              Vibrant, long-lasting designs.
+            </p>
+          </div>
+
+          <div class="card-premium p-8 text-center group section-transition" style="transition-delay: 0.4s;">
+            <div class="w-16 h-16 bg-gold-400 rounded-full flex items-center justify-center mx-auto mb-6 transition-transform duration-600 group-hover:scale-110">
+              <i class="fas fa-tag text-dark-900 text-xl"></i>
+            </div>
+            <h3 class="text-xl font-medium mb-4 gradient-text-premium">Labeling</h3>
+            <p class="text-gray-400 leading-relaxed">
+              Custom labels and branding solutions. Complete identity packages
+              for businesses of all sizes.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="py-32 px-6 bg-dark-900">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-20">
+          <h2 class="text-3xl md:text-4xl font-light mb-4 section-transition">Our Work</h2>
+          <p class="text-gray-400 text-lg max-w-2xl mx-auto section-transition" style="transition-delay: 0.1s;">
+            Recent projects showcasing our craftsmanship
+          </p>
+        </div>
+
+        <!-- Dynamic container here -->
+        <div id="projects-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Static fallback projects (shown until data loads or on error) -->
+          <div class="card-premium overflow-hidden group">
+            <div class="relative overflow-hidden">
+              <img data-src="./assets/img/portfolio/tshirt24.jpg" alt="Embroidered corporate uniforms"
+                class="w-full h-64 object-cover image-premium image-loading">
+              <div class="absolute inset-0 bg-dark-950 bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-600 flex items-center justify-center">
+                <span class="text-white text-sm font-medium">View Project</span>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="font-medium mb-2">Corporate Uniforms</h3>
+              <p class="text-gray-400 text-sm">Precision embroidery</p>
+            </div>
+          </div>
+
+          <div class="card-premium overflow-hidden group">
+            <div class="relative overflow-hidden">
+              <img data-src="./assets/img/portfolio/tshirt15.jpg" alt="Custom printed t-shirts"
+                class="w-full h-64 object-cover image-premium image-loading">
+              <div class="absolute inset-0 bg-dark-950 bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-600 flex items-center justify-center">
+                <span class="text-white text-sm font-medium">View Project</span>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="font-medium mb-2">Event T-shirts</h3>
+              <p class="text-gray-400 text-sm">Vibrant printing</p>
+            </div>
+          </div>
+
+          <div class="card-premium overflow-hidden group">
+            <div class="relative overflow-hidden">
+              <img data-src="./assets/img/portfolio/full-custom13.jpg" alt="Custom clothing labels"
+                class="w-full h-64 object-cover image-premium image-loading">
+              <div class="absolute inset-0 bg-dark-950 bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-600 flex items-center justify-center">
+                <span class="text-white text-sm font-medium">View Project</span>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="font-medium mb-2">Brand Labels</h3>
+              <p class="text-gray-400 text-sm">Custom branding</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-12">
+          <a href="./contact.html" class="btn-premium">
+            View Full Portfolio
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-32 px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-light mb-6 section-transition">
+          Ready to Begin Your Project?
+        </h2>
+        <p class="text-gray-400 text-lg mb-8 max-w-2xl mx-auto section-transition" style="transition-delay: 0.1s;">
+          Let's discuss your embroidery, printing, or labeling needs
+        </p>
+        <a href="./contact.html" class="btn-premium btn-premium-solid section-transition" style="transition-delay: 0.2s;">
+          Start Your Project
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="site-footer"></div>
+
+  <div id="page-loader"
+    class="fixed inset-0 bg-dark-950 z-50 flex items-center justify-center transition-opacity duration-600">
+    <div class="text-center">
+      <div class="loading-premium mx-auto mb-4"></div>
+      <p class="text-gray-400 text-sm">Loading</p>
+    </div>
+  </div>
+
+  <script src="./assets/js/main.js"></script>
+
+  <!-- Dynamic load script - add this block at the end of body -->
+  <script type="module">
+    import { collection, getDocs } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+
+    const projectsGrid = document.getElementById('projects-grid');
+
+    async function loadProjects() {
+      try {
+        const querySnapshot = await getDocs(collection(window.db, "projects"));
+        let html = '';
+
+        querySnapshot.forEach((doc) => {
+          const data = doc.data();
+          html += `
+            <div class="card-premium overflow-hidden group">
+              <div class="relative overflow-hidden">
+                ${data.imageUrl ? `
+                  <img src="${data.imageUrl}" alt="${data.title || 'Project'}" 
+                       class="w-full h-64 object-cover image-premium">
+                ` : `
+                  <div class="w-full h-64 bg-gray-800 flex items-center justify-center">
+                    <span class="text-gray-500">No image</span>
+                  </div>
+                `}
+                <div class="absolute inset-0 bg-dark-950 bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-600 flex items-center justify-center">
+                  <span class="text-white text-sm font-medium">View Project</span>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="font-medium mb-2">${data.title || 'Untitled Project'}</h3>
+                <p class="text-gray-400 text-sm">${data.description || 'Custom work'}</p>
+              </div>
+            </div>
+          `;
+        });
+
+        if (html.trim() !== '') {
+          projectsGrid.innerHTML = html;
+        }
+        // if empty → static fallback remains
+
+      } catch (error) {
+        console.error("Firestore load error:", error);
+        // static fallback stays visible
+      }
+    }
+
+    // Run after page load
+    loadProjects();
+  </script>
+
+</body>
+            </html>  }
 </script>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
