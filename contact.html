@@ -1,83 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact Us — Classic Brand Co</title>
+  <title>Contact — Classic Brand Co</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <script src="./assets/js/main.js" defer></script>
   <style>
     .neon-gold { text-shadow: 0 0 15px #f6c14e; }
-    .glass { background: rgba(10,10,10,0.6); backdrop-filter: blur(12px); border: 1px solid rgba(246,193,78,0.1); }
-    input, textarea, select { background: #111 !important; border: 1px solid #333 !important; color: white !important; }
-    input:focus, textarea:focus { border-color: #f6c14e !important; outline: none; }
   </style>
 </head>
 <body class="bg-black text-white min-h-screen font-sans">
 
-  <header class="fixed top-0 w-full bg-black/90 backdrop-blur-md z-50 border-b border-white/5">
-    <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-      <a href="./index.html" class="text-xl font-bold tracking-tighter hover:opacity-80 transition">
-        <span class="text-[#f6c14e]">CBC</span> CLASSIC BRAND
-      </a>
-      <div class="hidden md:flex items-center space-x-8 text-[10px] font-bold uppercase tracking-[0.2em]">
-        <a href="./index.html#services" class="hover:text-[#f6c14e] transition">Services</a>
-        <a href="./index.html#portfolio" class="hover:text-[#f6c14e] transition">Portfolio</a>
-        <a href="./contact.html" class="bg-[#f6c14e] text-black px-5 py-2">Contact Us</a>
-      </div>
-    </nav>
-  </header>
+  <div id="site-header"></div>
 
-  <main class="pt-32 pb-20 px-6 max-w-7xl mx-auto">
-    <div class="text-center mb-16">
+  <main class="pt-32 pb-20 px-6 max-w-7xl mx-auto" style="opacity: 0; transition: opacity 0.6s;">
+
+    <div class="text-center mb-16 fade-in">
       <h1 class="text-5xl md:text-7xl font-black tracking-tighter mb-4 neon-gold">GET IN TOUCH</h1>
-      <p class="text-gray-400">Let's discuss your embroidery, printing, or labeling needs.</p>
+      <p class="text-gray-400 text-xl">Let's discuss your embroidery, printing, or labeling project.</p>
     </div>
 
     <div class="grid lg:grid-cols-2 gap-12">
+      
+      <!-- Contact Info -->
       <div class="space-y-6">
-        <div class="glass p-8 rounded-2xl">
-          <h2 class="text-2xl font-bold mb-6 text-[#f6c14e]">Our Studio</h2>
-          <div class="space-y-4 text-gray-300">
-            <p class="flex items-center gap-4"><i class="fas fa-map-marker-alt text-[#f6c14e]"></i> Matugga Center, Near Lwadda School.</p>
-            <p class="flex items-center gap-4"><i class="fab fa-whatsapp text-green-500"></i> +256 785 475 049.</p>
-            <p class="flex items-center gap-4"><i class="fas fa-envelope text-purple-500"></i> info@classicbrand.co.</p>
+        <div class="glass p-8 rounded-2xl neon-gold">
+          <h2 class="text-2xl font-bold mb-6 text-[#f6c14e]">Visit Our Studio</h2>
+          <div class="space-y-6 text-gray-300">
+            <p class="flex items-center gap-4 text-lg"><i class="fas fa-map-marker-alt text-[#f6c14e] text-xl"></i> Matugga Center, Near Lwadda School, Uganda</p>
+            <p class="flex items-center gap-4 text-lg"><i class="fab fa-whatsapp text-green-400 text-xl"></i> <a href="https://wa.me/256785475049" class="hover:text-green-300">+256 785 475 049</a></p>
+            <p class="flex items-center gap-4 text-lg"><i class="fas fa-phone text-blue-400 text-xl"></i> <a href="tel:+256759921866">+256 759 921 866</a></p>
+            <p class="flex items-center gap-4 text-lg"><i class="fas fa-envelope text-purple-400 text-xl"></i> info@classicbrandco.ug</p>
           </div>
         </div>
 
         <div class="glass p-8 rounded-2xl">
-          <h3 class="font-bold mb-4">Business Hours</h3>
-          <ul class="text-sm text-gray-400 space-y-2">
-            <li class="flex justify-between"><span>Mon - Fri</span> <span class="text-white">8:00 AM - 6:00 PM</span></li>
-            <li class="flex justify-between"><span>Saturday</span> <span class="text-white">8:00 AM - 4:00 PM</span></li>
-            <li class="flex justify-between"><span>Sunday</span> <span class="text-gray-600">Closed</span></li>
+          <h3 class="text-xl font-bold mb-6 text-[#f6c14e]">Business Hours</h3>
+          <ul class="text-lg space-y-3">
+            <li class="flex justify-between py-2 border-b border-white/10"><span>Mon - Sat</span> <span class="font-bold">8AM - 6PM</span></li>
+            <li class="flex justify-between py-2"><span>Sunday</span> <span class="text-gray-500">Closed</span></li>
           </ul>
         </div>
       </div>
 
+      <!-- Contact Form -->
       <div class="glass p-8 rounded-2xl">
-        <form action="https://formspree.io/f/YOUR_EMAIL_HERE" method="POST" class="space-y-4">
-          <div class="grid md:grid-cols-2 gap-4">
-            <input type="text" name="name" placeholder="Full Name" required class="w-full p-4 rounded-xl">
-            <input type="email" name="_replyto" placeholder="Email Address" required class="w-full p-4 rounded-xl">
+        <h3 class="text-2xl font-bold mb-8 text-[#f6c14e]">Start Your Project</h3>
+        <form action="https://formspree.io/f/YOUR_EMAIL_HERE" method="POST" class="space-y-6">
+          <!-- Note: Replace YOUR_EMAIL_HERE with your Formspree endpoint -->
+          <div class="grid md:grid-cols-2 gap-6">
+            <input type="text" name="name" placeholder="Full Name *" required 
+                   class="w-full p-5 rounded-2xl bg-zinc-900 border border-zinc-700 focus:border-[#f6c14e] focus:ring-2 focus:ring-[#f6c14e]/20 transition-all text-white placeholder-gray-500">
+            <input type="email" name="_replyto" placeholder="Email Address *" required 
+                   class="w-full p-5 rounded-2xl bg-zinc-900 border border-zinc-700 focus:border-[#f6c14e] focus:ring-2 focus:ring-[#f6c14e]/20 transition-all text-white placeholder-gray-500">
           </div>
-          <select name="service" class="w-full p-4 rounded-xl">
-            <option value="embroidery">Embroidery Service</option>
-            <option value="printing">T-shirt Printing</option>
-            <option value="labeling">Labeling & Branding</option>
+          <select name="service" class="w-full p-5 rounded-2xl bg-zinc-900 border border-zinc-700 focus:border-[#f6c14e] text-white">
+            <option value="">Select Service</option>
+            <option value="embroidery">🎗️ Embroidery</option>
+            <option value="printing">👕 T-Shirt Printing</option>
+            <option value="labeling">🏷️ Custom Labeling</option>
           </select>
-          <textarea name="message" rows="5" placeholder="Tell us about your project quantity and timeline..." required class="w-full p-4 rounded-xl"></textarea>
-          <button type="submit" class="w-full bg-[#f6c14e] text-black font-black py-4 rounded-xl hover:bg-white transition uppercase text-xs tracking-widest">
-            Send Message
+          <textarea name="message" rows="6" placeholder="Tell us about your project (quantity, timeline, design ideas)..." required 
+                    class="w-full p-5 rounded-2xl bg-zinc-900 border border-zinc-700 focus:border-[#f6c14e] focus:ring-2 focus:ring-[#f6c14e]/20 transition-all text-white placeholder-gray-500 resize-vertical"></textarea>
+          <button type="submit" class="w-full bg-gradient-to-r from-[#f6c14e] to-[#d4a742] text-black font-black py-5 px-8 rounded-2xl uppercase text-sm tracking-widest hover:from-white hover:to-[#f6c14e] hover:shadow-2xl hover:shadow-[#f6c14e]/25 transition-all duration-300 transform hover:-translate-y-1">
+            <i class="fas fa-paper-plane mr-2"></i>Send Message
           </button>
         </form>
       </div>
+
     </div>
   </main>
 
-  <footer class="py-12 border-t border-white/5 text-center text-gray-600 text-[10px] tracking-[0.3em]">
-    © 2026 CLASSIC BRAND CO. ALL RIGHTS RESERVED.
-  </footer>
+  <div id="site-footer"></div>
 
 </body>
 </html>
