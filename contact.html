@@ -6,202 +6,78 @@
   <title>Contact Us — Classic Brand Co</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <link rel="stylesheet" href="./assets/css/style.css"/>
-
   <style>
-    .neon-gold { text-shadow: 0 0 20px #f6c14e, 0 0 40px #f6c14e80; }
-    .glass { background: rgba(10,10,10,0.4); backdrop-filter: blur(16px); border: 1px solid rgba(246,193,78,0.2); }
+    .neon-gold { text-shadow: 0 0 15px #f6c14e; }
+    .glass { background: rgba(10,10,10,0.6); backdrop-filter: blur(12px); border: 1px solid rgba(246,193,78,0.1); }
+    input, textarea, select { background: #111 !important; border: 1px solid #333 !important; color: white !important; }
+    input:focus, textarea:focus { border-color: #f6c14e !important; outline: none; }
   </style>
 </head>
-<body class="bg-black text-white min-h-screen">
+<body class="bg-black text-white min-h-screen font-sans">
 
-  <header class="fixed top-0 w-full bg-black/80 backdrop-blur-md z-50 py-4">
-    <nav class="max-w-7xl mx-auto px-6 flex justify-between items-center">
-      <h1 class="text-2xl font-bold neon-gold">Classic Brand Co</h1>
-      <div class="space-x-6">
+  <header class="fixed top-0 w-full bg-black/90 backdrop-blur-md z-50 border-b border-white/5">
+    <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="./index.html" class="text-xl font-bold tracking-tighter hover:opacity-80 transition">
+        <span class="text-[#f6c14e]">CBC</span> CLASSIC BRAND
+      </a>
+      <div class="hidden md:flex items-center space-x-8 text-[10px] font-bold uppercase tracking-[0.2em]">
         <a href="./index.html#services" class="hover:text-[#f6c14e] transition">Services</a>
         <a href="./index.html#portfolio" class="hover:text-[#f6c14e] transition">Portfolio</a>
-        <a href="#" class="bg-[#f6c14e] text-black px-6 py-2 rounded-full">Contact</a>
+        <a href="./contact.html" class="bg-[#f6c14e] text-black px-5 py-2">Contact Us</a>
       </div>
     </nav>
   </header>
 
-  <main class="pt-24 max-w-5xl mx-auto px-6 py-16">
-    <h1 class="text-6xl font-bold text-center neon-gold mb-16">Get In Touch</h1>
+  <main class="pt-32 pb-20 px-6 max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <h1 class="text-5xl md:text-7xl font-black tracking-tighter mb-4 neon-gold">GET IN TOUCH</h1>
+      <p class="text-gray-400">Let's discuss your embroidery, printing, or labeling needs.</p>
+    </div>
 
-    <div class="grid md:grid-cols-2 gap-12">
-      <!-- Contact Info -->
-      <div class="glass p-10 rounded-3xl">
-        <h2 class="text-3xl font-bold mb-8">Contact Information</h2>
-        <div class="space-y-6 text-lg">
-          <p><i class="fas fa-map-marker-alt text-[#f6c14e] mr-3"></i>Matugga Center, Near Lwadda School, Kampala, Uganda</p>
-          <p><i class="fab fa-whatsapp text-[#f6c14e] mr-3"></i>+256 785 475 049</p>
-          <p><i class="fas fa-phone text-[#f6c14e] mr-3"></i>+256 759 921 866</p>
-          <p><i class="fas fa-envelope text-[#f6c14e] mr-3"></i>info@classicbrand.co</p>
-          <p class="mt-8"><strong>Hours:</strong><br>Monday–Saturday: 8:00 AM – 6:00 PM<br>Sunday: Closed</p>
+    <div class="grid lg:grid-cols-2 gap-12">
+      <div class="space-y-6">
+        <div class="glass p-8 rounded-2xl">
+          <h2 class="text-2xl font-bold mb-6 text-[#f6c14e]">Our Studio</h2>
+          <div class="space-y-4 text-gray-300">
+            <p class="flex items-center gap-4"><i class="fas fa-map-marker-alt text-[#f6c14e]"></i> Matugga Center, Near Lwadda School.</p>
+            <p class="flex items-center gap-4"><i class="fab fa-whatsapp text-green-500"></i> +256 785 475 049.</p>
+            <p class="flex items-center gap-4"><i class="fas fa-envelope text-purple-500"></i> info@classicbrand.co.</p>
+          </div>
+        </div>
+
+        <div class="glass p-8 rounded-2xl">
+          <h3 class="font-bold mb-4">Business Hours</h3>
+          <ul class="text-sm text-gray-400 space-y-2">
+            <li class="flex justify-between"><span>Mon - Fri</span> <span class="text-white">8:00 AM - 6:00 PM</span></li>
+            <li class="flex justify-between"><span>Saturday</span> <span class="text-white">8:00 AM - 4:00 PM</span></li>
+            <li class="flex justify-between"><span>Sunday</span> <span class="text-gray-600">Closed</span></li>
+          </ul>
         </div>
       </div>
 
-      <!-- Form -->
-      <div class="glass p-10 rounded-3xl">
-        <h2 class="text-3xl font-bold mb-8">Send Message</h2>
-        <form class="space-y-6">
-          <input type="text" placeholder="Your Name" class="w-full p-4 bg-gray-900 border border-gray-700 rounded-lg focus:border-[#f6c14e] outline-none"/>
-          <input type="email" placeholder="Your Email" class="w-full p-4 bg-gray-900 border border-gray-700 rounded-lg focus:border-[#f6c14e] outline-none"/>
-          <input type="tel" placeholder="Phone Number" class="w-full p-4 bg-gray-900 border border-gray-700 rounded-lg focus:border-[#f6c14e] outline-none"/>
-          <textarea placeholder="Your Message / Project Details" rows="6" class="w-full p-4 bg-gray-900 border border-gray-700 rounded-lg focus:border-[#f6c14e] outline-none"></textarea>
-          <button type="submit" class="w-full bg-[#f6c14e] text-black font-bold py-4 rounded-full hover:bg-[#d4a742] transition">Send Message</button>
+      <div class="glass p-8 rounded-2xl">
+        <form action="https://formspree.io/f/YOUR_EMAIL_HERE" method="POST" class="space-y-4">
+          <div class="grid md:grid-cols-2 gap-4">
+            <input type="text" name="name" placeholder="Full Name" required class="w-full p-4 rounded-xl">
+            <input type="email" name="_replyto" placeholder="Email Address" required class="w-full p-4 rounded-xl">
+          </div>
+          <select name="service" class="w-full p-4 rounded-xl">
+            <option value="embroidery">Embroidery Service</option>
+            <option value="printing">T-shirt Printing</option>
+            <option value="labeling">Labeling & Branding</option>
+          </select>
+          <textarea name="message" rows="5" placeholder="Tell us about your project quantity and timeline..." required class="w-full p-4 rounded-xl"></textarea>
+          <button type="submit" class="w-full bg-[#f6c14e] text-black font-black py-4 rounded-xl hover:bg-white transition uppercase text-xs tracking-widest">
+            Send Message
+          </button>
         </form>
       </div>
     </div>
   </main>
 
-  <footer class="bg-gray-900 py-12 text-center">
-    <p>&copy; 2026 Classic Brand Co. All rights reserved.</p>
+  <footer class="py-12 border-t border-white/5 text-center text-gray-600 text-[10px] tracking-[0.3em]">
+    © 2026 CLASSIC BRAND CO. ALL RIGHTS RESERVED.
   </footer>
 
 </body>
-    </html>                    <div class="font-medium text-white">Phone Call</div>
-                    <div class="text-gray-400">+256 759 921 866</div>
-                  </div>
-                  <i class="fas fa-chevron-right text-gray-500 group-hover:text-gold-400 transition-colors"></i>
-                </a>
-
-                <div class="flex items-center gap-4 p-4 rounded-lg">
-                  <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center">
-                    <i class="fas fa-envelope text-white text-lg"></i>
-                  </div>
-                  <div>
-                    <div class="font-medium text-white">Email</div>
-                    <div class="text-gray-400">info@classicbrand.co</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="card-premium p-8 section-transition" style="transition-delay: 0.2s;">
-              <div class="flex items-start gap-4">
-                <div class="w-12 h-12 bg-gold-400 rounded-full flex items-center justify-center flex-shrink-0 transition-transform duration-600 hover:scale-110">
-                  <i class="fas fa-clock text-dark-900 text-lg"></i>
-                </div>
-                <div>
-                  <h3 class="text-xl font-light mb-4 gradient-text-premium">Business Hours</h3>
-                  <div class="space-y-2 text-gray-300">
-                    <div class="flex justify-between items-center py-2 border-b border-gray-800">
-                      <span>Monday - Friday</span>
-                      <span class="text-gold-400">8:00 AM - 6:00 PM</span>
-                    </div>
-                    <div class="flex justify-between items-center py-2 border-b border-gray-800">
-                      <span>Saturday</span>
-                      <span class="text-gold-400">8:00 AM - 4:00 PM</span>
-                    </div>
-                    <div class="flex justify-between items-center py-2">
-                      <span>Sunday</span>
-                      <span class="text-gray-500">Closed</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="card-premium p-8 section-transition" style="transition-delay: 0.3s;">
-            <h2 class="text-2xl font-light mb-2">Send Us a Message</h2>
-            <p class="text-gray-400 mb-8">Let's discuss your project requirements</p>
-            
-            <form class="form-premium space-y-6">
-              <div>
-                <label for="name" class="block text-sm font-medium mb-3 text-gray-300">Full Name *</label>
-                <input type="text" id="name" name="name" required
-                  class="w-full rounded-lg"
-                  placeholder="Your full name">
-              </div>
-
-              <div class="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label for="email" class="block text-sm font-medium mb-3 text-gray-300">Email *</label>
-                  <input type="email" id="email" name="email" required
-                    class="w-full rounded-lg"
-                    placeholder="your.email@example.com">
-                </div>
-                <div>
-                  <label for="phone" class="block text-sm font-medium mb-3 text-gray-300">Phone</label>
-                  <input type="tel" id="phone" name="phone"
-                    class="w-full rounded-lg"
-                    placeholder="+256 XXX XXX XXX">
-                </div>
-              </div>
-
-              <div>
-                <label for="service" class="block text-sm font-medium mb-3 text-gray-300">Service Needed</label>
-                <select id="service" name="service" class="w-full rounded-lg">
-                  <option value="">Select a service</option>
-                  <option value="embroidery">Embroidery</option>
-                  <option value="printing">T-shirt Printing</option>
-                  <option value="labeling">Labeling & Branding</option>
-                  <option value="digitizing">Digitizing</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-
-              <div>
-                <label for="message" class="block text-sm font-medium mb-3 text-gray-300">Project Details *</label>
-                <textarea id="message" name="message" rows="5" required
-                  class="w-full rounded-lg"
-                  placeholder="Tell us about your project, quantity, timeline, and any specific requirements..."></textarea>
-              </div>
-
-              <button type="submit" class="btn-premium btn-premium-solid w-full justify-center">
-                <i class="fas fa-paper-plane mr-2"></i>
-                Send Message
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="py-20 px-6 bg-dark-900">
-      <div class="max-w-6xl mx-auto">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl md:text-4xl font-light mb-4 section-transition">Find Our Studio</h2>
-          <p class="text-gray-400 text-lg max-w-2xl mx-auto section-transition" style="transition-delay: 0.1s;">
-            Visit us at Matugga Center for a personal consultation about your project
-          </p>
-        </div>
-
-        <div class="card-premium overflow-hidden section-transition" style="transition-delay: 0.2s;">
-          <div class="relative">
-            <img 
-              data-src="./assets/img/location/map-placeholder.jpg" 
-              alt="Classic Brand Company location at Matugga Center near Lwadda School"
-              class="w-full h-96 object-cover image-premium image-loading"
-            >
-            <div class="absolute inset-0 bg-dark-950/40 flex flex-col items-center justify-center text-center p-8">
-              <div class="w-16 h-16 bg-gold-400 rounded-full flex items-center justify-center mb-4">
-                <i class="fas fa-map-marker-alt text-dark-900 text-xl"></i>
-              </div>
-              <h3 class="text-2xl font-light text-white mb-2">Matugga Center</h3>
-              <p class="text-gray-300">Near Lwadda School</p>
-              <p class="text-sm text-gray-400 mt-4">Visit our studio for a personal consultation</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <div id="site-footer"></div>
-
-  <div id="page-loader" class="fixed inset-0 bg-dark-950 z-50 flex items-center justify-center transition-opacity duration-600">
-    <div class="text-center">
-      <div class="loading-premium mx-auto mb-4"></div>
-      <p class="text-gray-400 text-sm">Loading</p>
-    </div>
-  </div>
-
-  <script src="./assets/js/main.js"></script>
-</body>
-
 </html>
