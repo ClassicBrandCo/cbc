@@ -3,109 +3,76 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Classic Brand — Premium Embroidery & Printing Services</title>
-  
+  <title>Classic Brand Co — Premium Embroidery & Printing</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            gold: { 400: '#f6c14e', 500: '#d4a742' },
-            dark: { 900: '#0a0a0a', 950: '#050505' }
-          }
-        }
-      }
-    }
-  </script>
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
-    /* Adding basic animations directly to fix "Loading" errors */
-    .fade-in { animation: fadeIn 1s ease-in forwards; }
+    .gold-glow { text-shadow: 0 0 15px #f6c14e; }
+    .card-premium { transition: all 0.4s ease; border: 1px solid rgba(255,255,255,0.05); }
+    .card-premium:hover { transform: translateY(-10px); border-color: #f6c14e; }
+    .fade-in { animation: fadeIn 1s ease-out forwards; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-    .btn-premium { @apply border border-gold-400 px-8 py-3 uppercase tracking-widest text-xs font-bold transition-all hover:bg-gold-400 hover:text-black; }
-    .card-premium { @apply bg-dark-900 border border-white/5 rounded-xl overflow-hidden hover:border-gold-400/50 transition-all; }
   </style>
 </head>
+<body class="bg-black text-white font-sans antialiased">
 
-<body class="bg-dark-950 text-white font-sans antialiased">
-
-  <nav class="fixed w-full z-50 bg-dark-950/80 backdrop-blur-md border-b border-white/5 p-6">
+  <nav class="fixed w-full z-50 bg-black/90 backdrop-blur-md border-b border-white/10 p-5">
     <div class="max-w-7xl mx-auto flex justify-between items-center">
-      <div class="text-xl font-bold tracking-tighter flex items-center gap-2">
-        <span class="text-gold-400 italic font-black">CBC</span> CLASSIC BRAND
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 bg-[#f6c14e] rounded-lg flex items-center justify-center font-black text-black">CBC</div>
+        <h1 class="text-lg font-bold tracking-tight">Classic Brand Co</h1>
       </div>
-      <div class="hidden md:flex gap-8 text-[10px] uppercase font-bold tracking-[0.2em]">
-        <a href="#home" class="hover:text-gold-400">Home</a>
-        <a href="#services" class="hover:text-gold-400">Services</a>
-        <a href="#portfolio" class="hover:text-gold-400">Portfolio</a>
-        <a href="./contact.html" class="text-gold-400">Contact</a>
+      <div class="hidden md:flex gap-8 text-xs uppercase font-bold tracking-widest">
+        <a href="#home" class="hover:text-[#f6c14e]">Home</a>
+        <a href="#services" class="hover:text-[#f6c14e]">Services</a>
+        <a href="#portfolio" class="hover:text-[#f6c14e]">Portfolio</a>
+        <a href="contact.html" class="text-[#f6c14e] border border-[#f6c14e] px-4 py-2 hover:bg-[#f6c14e] hover:text-black transition">Contact</a>
       </div>
     </div>
   </nav>
 
   <main>
-    <section id="home" class="min-h-screen flex items-center justify-center px-6 pt-20">
-      <div class="max-w-4xl mx-auto text-center fade-in">
-        <img src="./img/logo.svg" alt="CBC Logo" class="w-20 h-20 mx-auto mb-8">
-        <h1 class="text-5xl md:text-7xl font-light mb-6 tracking-tighter">
-          CLASSIC <span class="text-gold-400 italic">BRAND</span> CO
-        </h1>
-        <p class="text-lg text-gray-400 mb-10 max-w-xl mx-auto">
-          Premium embroidery and printing services. Quality craftsmanship for high-possession brands.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="#portfolio" class="bg-gold-400 text-black px-10 py-4 font-bold uppercase text-xs tracking-widest hover:bg-white transition">View Portfolio</a>
-          <a href="./contact.html" class="border border-white/20 px-10 py-4 font-bold uppercase text-xs tracking-widest hover:bg-white hover:text-black transition">Get Started</a>
-        </div>
+    <section id="home" class="min-h-screen flex items-center justify-center pt-20">
+      <div class="text-center fade-in px-6">
+        <img src="./img/logo.svg" alt="Logo" class="w-24 h-24 mx-auto mb-8 gold-glow">
+        <h1 class="text-6xl md:text-8xl font-black mb-4 tracking-tighter">QUALITY<br><span class="text-[#f6c14e] italic">REIMAGINED</span></h1>
+        <p class="text-gray-400 max-w-lg mx-auto mb-10 text-lg">Matugga's premier center for embroidery, printing, and brand labeling.</p>
+        <a href="contact.html" class="bg-[#f6c14e] text-black px-10 py-4 font-black uppercase text-sm tracking-tighter hover:scale-105 transition-transform inline-block">Start Project</a>
       </div>
     </section>
 
-    <section id="portfolio" class="py-32 px-6 bg-dark-900">
+    <section id="portfolio" class="py-32 px-6">
       <div class="max-w-6xl mx-auto">
-        <h2 class="text-3xl font-light mb-16 text-center tracking-widest uppercase">The Collection</h2>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          
-          <div class="card-premium group">
-            <img src="./img/portfolio/tshirt24.jpg" class="w-full h-80 object-cover grayscale group-hover:grayscale-0 transition duration-700">
+        <h2 class="text-3xl font-bold mb-16 gold-glow tracking-widest uppercase">The Collection</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="card-premium bg-zinc-900 rounded-2xl overflow-hidden group">
+            <img src="./img/portfolio/tshirt24.jpg" class="w-full h-80 object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
             <div class="p-6">
-              <h3 class="text-gold-400 font-bold text-xs uppercase tracking-widest">Corporate</h3>
-              <p class="text-sm mt-1">Premium Uniforms</p>
+              <span class="text-[#f6c14e] text-[10px] font-bold uppercase tracking-widest">Embroidery</span>
+              <h3 class="text-xl font-bold mt-2">Corporate Wear</h3>
             </div>
           </div>
-
-          <div class="card-premium group">
-            <img src="./img/portfolio/tshirt15.jpg" class="w-full h-80 object-cover grayscale group-hover:grayscale-0 transition duration-700">
+          <div class="card-premium bg-zinc-900 rounded-2xl overflow-hidden group">
+            <img src="./img/portfolio/tshirt15.jpg" class="w-full h-80 object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
             <div class="p-6">
-              <h3 class="text-gold-400 font-bold text-xs uppercase tracking-widest">Apparel</h3>
-              <p class="text-sm mt-1">Event T-Shirts</p>
+              <span class="text-[#f6c14e] text-[10px] font-bold uppercase tracking-widest">Printing</span>
+              <h3 class="text-xl font-bold mt-2">Event Apparel</h3>
             </div>
           </div>
-
-          <div class="card-premium group">
-            <img src="./img/portfolio/full-custom13.jpg" class="w-full h-80 object-cover grayscale group-hover:grayscale-0 transition duration-700">
+          <div class="card-premium bg-zinc-900 rounded-2xl overflow-hidden group">
+            <img src="./img/portfolio/full-custom13.jpg" class="w-full h-80 object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
             <div class="p-6">
-              <h3 class="text-gold-400 font-bold text-xs uppercase tracking-widest">Branding</h3>
-              <p class="text-sm mt-1">Custom Labels</p>
+              <span class="text-[#f6c14e] text-[10px] font-bold uppercase tracking-widest">Labeling</span>
+              <h3 class="text-xl font-bold mt-2">Custom Branding</h3>
             </div>
           </div>
-
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="py-20 border-t border-white/5 text-center">
-    <p class="text-[10px] uppercase tracking-[0.5em] text-gray-600">© 2026 Classic Brand Co — Matugga Center</p>
+  <footer class="py-20 border-t border-white/5 bg-zinc-950 text-center">
+    <p class="text-xs text-gray-500 tracking-[0.3em]">© 2026 CLASSIC BRAND CO. | MATUGGA CENTER, UGANDA</p>
   </footer>
-
-  <script>
-    // Simple script to remove the loader once page loads
-    window.addEventListener('load', () => {
-      document.getElementById('page-loader')?.classList.add('opacity-0');
-      setTimeout(() => document.getElementById('page-loader')?.remove(), 600);
-    });
-  </script>
 </body>
 </html>
