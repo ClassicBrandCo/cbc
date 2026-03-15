@@ -4,9 +4,9 @@ const urlsToCache = [
   '/',
   '/index.html',
   '/contact.html',
-  '/assets/css/style.css',
+  '/style.css',
   '/assets/js/main.js',
-  '/assets/img/logo.svg'
+  '/img/logo.svg'
 ];
 
 self.addEventListener('install', event => {

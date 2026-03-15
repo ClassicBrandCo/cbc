@@ -1,111 +1,212 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Portfolio - Classic Brand Co</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
-  <script src="./assets/js/main.js" defer></script>
-  <link rel="manifest" href="./manifest.json">
-  <style>
-    .lightbox { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); }
-    .lightbox.active { display: flex; }
-    .lightbox img { max-width: 90%; max-height: 90%; margin: auto; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Classic Brand Co</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+    <script src="./assets/js/main.js" defer></script>
+    <link rel="manifest" href="./manifest.json">
+    <style>
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .lightbox.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .lightbox .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 1001;
+        }
+    </style>
 </head>
-<body class="bg-black text-white">
-  <div id="site-header"></div>
-  <main class="pt-20">
-    <section class="py-20 px-6">
-      <div class="max-w-6xl mx-auto">
-        <h1 class="text-4xl font-bold mb-4 gold-glow text-center">Portfolio Gallery</h1>
-        <p class="text-gray-400 text-center mb-12 max-w-2xl mx-auto">Premium Quality embroidery, printing and labeling from Matugga Center craftsmanship.</p>
-        
-        <!-- Filter Buttons -->
-        <div class="flex flex-wrap gap-4 justify-center mb-12">
-          <button class="filter-btn active px-6 py-3 bg-[#f6c14e] text-black font-bold rounded-full text-sm" data-filter="all">All</button>
-          <button class="filter-btn px-6 py-3 glass text-white font-bold rounded-full text-sm" data-filter="embroidery">Embroidery</button>
-          <button class="filter-btn px-6 py-3 glass text-white font-bold rounded-full text-sm" data-filter="printing">Printing</button>
-          <button class="filter-btn px-6 py-3 glass text-white font-bold rounded-full text-sm" data-filter="labeling">Labeling</button>
-        </div>
 
-        <!-- Masonry Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 portfolio-grid">
-          <div class="portfolio-item embroidery glass rounded-2xl overflow-hidden group cursor-pointer" data-category="embroidery">
-            <img src="./assets/img/portfolio/tshirt24.jpg" alt="Premium Corporate Wear Embroidery - Matugga Center Craftsmanship" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
-            <div class="p-6">
-              <h3 class="text-xl font-bold mb-2">Corporate Wear</h3>
-              <p class="text-gray-400 text-sm">Precision embroidery on high-quality fabrics.</p>
-            </div>
-          </div>
-          <div class="portfolio-item printing glass rounded-2xl overflow-hidden group cursor-pointer" data-category="printing">
-            <img src="./assets/img/portfolio/tshirt15.jpg" alt="Event Apparel DTG Printing - Premium Quality Matugga Craftsmanship" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
-            <div class="p-6">
-              <h3 class="text-xl font-bold mb-2">Event Apparel</h3>
-              <p class="text-gray-400 text-sm">Vibrant DTG printing for special events.</p>
-            </div>
-          </div>
-          <div class="portfolio-item labeling glass rounded-2xl overflow-hidden group cursor-pointer" data-category="labeling">
-            <img src="./assets/img/portfolio/full-custom13.jpg" alt="Custom Brand Labeling - Matugga Center Premium Craftsmanship" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
-            <div class="p-6">
-              <h3 class="text-xl font-bold mb-2">Custom Branding</h3>
-              <p class="text-gray-400 text-sm">Woven labels for luxury brand identity.</p>
-            </div>
-          </div>
+<body class="hero-bg">
+
+    <nav class="fixed top-0 w-full z-50 py-6 px-10 flex justify-between items-center glass">
+        <a href="index.html" class="text-2xl font-black tracking-tighter">
+            <span class="gold-text">CBC</span> CLASSIC BRAND
+        </a>
+        <div class="hidden md:flex gap-10 text-[10px] font-bold uppercase tracking-[0.2em]">
+            <a href="index.html#services" class="hover:text-[#f6c14e] transition">Services</a>
+            <a href="#" class="bg-gold text-black px-6 py-2 rounded-sm">Portfolio</a>
+            <a href="contact.html" class="hover:text-[#f6c14e] transition">Contact</a>
         </div>
-      </div>
+    </nav>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-20">
+        <div class="absolute opacity-5 text-[20vw] font-black select-none z-0">CBC</div>
+        <h1 class="text-6xl md:text-9xl font-black tracking-tighter z-10 mb-8">
+            OUR<br><span class="gold-text italic text-5xl md:text-8xl">WORK</span>
+        </h1>
+        <p class="max-w-xl text-gray-400 mt-8 text-lg z-10">
+            Masterpieces born from Matugga's finest craftsmanship. Each piece tells a story of precision and passion.
+        </p>
     </section>
-  </main>
 
-  <!-- Lightbox Modal -->
-  <div id="lightbox" class="lightbox">
-    <button onclick="closeLightbox()" class="absolute top-8 right-8 text-3xl text-white hover:text-[#f6c14e]">&times;</button>
-    <img id="lightbox-img" src="">
-  </div>
+    <section class="py-20 px-10 max-w-7xl mx-auto">
+        <!-- Filter Buttons -->
+        <div class="flex flex-wrap gap-4 justify-center mb-16">
+            <button class="filter-btn active px-8 py-3 bg-[#f6c14e] text-black font-bold rounded-full text-sm uppercase tracking-widest magnetic-hover" data-filter="all">All Work</button>
+            <button class="filter-btn px-8 py-3 glass text-white font-bold rounded-full text-sm uppercase tracking-widest magnetic-hover" data-filter="embroidery">Embroidery</button>
+            <button class="filter-btn px-8 py-3 glass text-white font-bold rounded-full text-sm uppercase tracking-widest magnetic-hover" data-filter="printing">Printing</button>
+            <button class="filter-btn px-8 py-3 glass text-white font-bold rounded-full text-sm uppercase tracking-widest magnetic-hover" data-filter="labeling">Labeling</button>
+        </div>
 
-  <div id="site-footer"></div>
-  
-  <script>if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js');</script>
-  <script>
-    // Portfolio Filter + Lightbox
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const items = document.querySelectorAll('.portfolio-item');
-    
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active', 'bg-[#f6c14e]', 'text-black'));
-        btn.classList.add('active', 'bg-[#f6c14e]', 'text-black');
-        
-        const filter = btn.dataset.filter;
-        items.forEach(item => {
-          if (filter === 'all' || item.dataset.category === filter) {
-            item.style.display = 'block';
-            gsap.fromTo(item, {opacity: 0, y: 50}, {opacity: 1, y: 0, duration: 0.5});
-          } else {
-            item.style.display = 'none';
-          }
+        <!-- Portfolio Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="portfolio-grid">
+            <!-- Embroidery Items -->
+            <div class="bento-item glass group cursor-pointer" data-category="embroidery" onclick="openLightbox('./img/portfolio/tshirt24.jpg')">
+                <div class="aspect-square overflow-hidden">
+                    <img src="./img/portfolio/tshirt24.jpg" alt="Corporate Embroidery"
+                        class="w-full h-full object-cover opacity-50 group-hover:opacity-100 transition duration-700">
+                </div>
+                <div class="p-6">
+                    <p class="text-[10px] font-bold gold-text tracking-widest uppercase mb-2">Embroidery</p>
+                    <h4 class="text-lg font-black">Corporate Excellence</h4>
+                </div>
+            </div>
+
+            <div class="bento-item glass group cursor-pointer" data-category="printing" onclick="openLightbox('./img/portfolio/tshirt15.jpg')">
+                <div class="aspect-square overflow-hidden">
+                    <img src="./img/portfolio/tshirt15.jpg" alt="DTG Printing"
+                        class="w-full h-full object-cover opacity-50 group-hover:opacity-100 transition duration-700">
+                </div>
+                <div class="p-6">
+                    <p class="text-[10px] font-bold gold-text tracking-widest uppercase mb-2">Printing</p>
+                    <h4 class="text-lg font-black">Event Impact</h4>
+                </div>
+            </div>
+
+            <div class="bento-item glass group cursor-pointer" data-category="labeling" onclick="openLightbox('./img/portfolio/full-custom13.jpg')">
+                <div class="aspect-square overflow-hidden">
+                    <img src="./img/portfolio/full-custom13.jpg" alt="Custom Labeling"
+                        class="w-full h-full object-cover opacity-50 group-hover:opacity-100 transition duration-700">
+                </div>
+                <div class="p-6">
+                    <p class="text-[10px] font-bold gold-text tracking-widest uppercase mb-2">Labeling</p>
+                    <h4 class="text-lg font-black">Brand DNA</h4>
+                </div>
+            </div>
+
+            <!-- Add more portfolio items as needed -->
+            <div class="bento-item glass group cursor-pointer md:col-span-2" data-category="embroidery" onclick="openLightbox('./img/portfolio/tshirt24.jpg')">
+                <div class="aspect-[2/1] overflow-hidden">
+                    <img src="./img/portfolio/tshirt24.jpg" alt="Premium Embroidery Collection"
+                        class="w-full h-full object-cover opacity-50 group-hover:opacity-100 transition duration-700">
+                </div>
+                <div class="p-8">
+                    <p class="text-[10px] font-bold gold-text tracking-widest uppercase mb-2">Featured</p>
+                    <h4 class="text-2xl font-black">Executive Collection</h4>
+                    <p class="text-gray-400 mt-2">Premium embroidery for corporate leaders</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-20 border-t border-white/5 px-10">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12 text-sm text-gray-500">
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase tracking-widest">Matugga Center</h4>
+                <p>Near Lwadda School, Matugga</p>
+                <p>+256 785 475 049</p>
+            </div>
+            <div class="text-center">
+                <h1 class="text-2xl font-black gold-text mb-2">CBC</h1>
+                <p>© 2026 CLASSIC BRAND CO.</p>
+            </div>
+            <div class="flex justify-end gap-6 text-xl">
+                <a href="#" class="hover:text-gold transition"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:text-gold transition"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Lightbox functionality
+        function openLightbox(src) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close lightbox on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
         });
-      });
-    });
-    
-    // Lightbox
-    items.forEach(item => {
-      item.addEventListener('click', () => {
-        document.getElementById('lightbox-img').src = item.querySelector('img').src;
-        document.getElementById('lightbox').classList.add('active');
-      });
-    });
-    
-    function closeLightbox() {
-      document.getElementById('lightbox').classList.remove('active');
-    }
-    
-    document.addEventListener('click', e => {
-      if (e.target.id === 'lightbox') closeLightbox();
-    });
-  </script>
+
+        // Portfolio filtering
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const portfolioItems = document.querySelectorAll('#portfolio-grid > div');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const filter = button.getAttribute('data-filter');
+
+                    // Update active button
+                    filterButtons.forEach(btn => btn.classList.remove('active', 'bg-[#f6c14e]', 'text-black'));
+                    filterButtons.forEach(btn => btn.classList.add('glass', 'text-white'));
+                    button.classList.add('active', 'bg-[#f6c14e]', 'text-black');
+                    button.classList.remove('glass', 'text-white');
+
+                    // Filter items
+                    portfolioItems.forEach(item => {
+                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                            item.style.display = 'block';
+                            gsap.fromTo(item, { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.5 });
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
 </body>
+
 </html>

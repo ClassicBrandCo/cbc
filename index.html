@@ -1,107 +1,115 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Premium embroidery, printing and branding services in Matugga, Uganda">
-  <meta property="og:title" content="Classic Brand Co">
-  <meta property="og:description" content="Quality reimagined - embroidery, printing, labeling">
-  <meta property="og:image" content="./assets/img/logo.svg">
-  <link rel="manifest" href="./manifest.json">
-  <title>Classic Brand Co — Premium Embroidery & Printing</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
-  <script src="./assets/js/main.js" defer></script>
-  <style>
-    .gold-glow { text-shadow: 0 0 15px #f6c14e; }
-    .card-premium { transition: all 0.4s ease; border: 1px solid rgba(255,255,255,0.05); }
-    .card-premium:hover { transform: translateY(-10px); border-color: #f6c14e; }
-    .fade-in { animation: fadeIn 1s ease-out forwards; }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classic Brand Co | Premium Branding</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+    <script src="./assets/js/main.js" defer></script>
 </head>
 
-<body class="bg-black text-white font-sans antialiased">
+<body class="hero-bg">
 
-  <div id="site-header"></div>
-
-  <main style="opacity: 0; transition: opacity 0.6s;">
-    <!-- Home -->
-    <section id="home" class="min-h-screen flex items-center justify-center pt-20">
-      <div class="text-center fade-in px-6">
-        <img src="./assets/img/logo.svg" alt="Classic Brand Co Logo" class="w-24 h-24 mx-auto mb-8 gold-glow">
-        <h1 class="text-6xl md:text-8xl font-black mb-4 tracking-tighter">QUALITY<br><span
-            class="text-[#f6c14e] italic">REIMAGINED</span></h1>
-        <p class="text-gray-400 max-w-lg mx-auto mb-10 text-lg">Matugga's premier center for embroidery, printing, and
-          brand labeling.</p>
-        <a href="contact.html"
-          class="bg-[#f6c14e] text-black px-10 py-4 font-black uppercase text-sm tracking-tighter hover:scale-105 transition-transform inline-block">Start
-          Project</a>
-      </div>
-    </section>
-
-    <!-- Services - NEW SECTION -->
-    <section id="services" class="py-32 px-6 bg-zinc-950/50">
-      <div class="max-w-6xl mx-auto">
-        <h2 class="text-3xl font-bold mb-16 gold-glow tracking-widest uppercase text-center">Our Services</h2>
-        <div class="grid md:grid-cols-3 gap-8">
-          <div class="card-premium glass rounded-2xl overflow-hidden group p-8 text-center">
-            <i class="fas fa-cut text-5xl text-[#f6c14e] mb-6 group-hover:animate-spin-slow"></i>
-            <h3 class="text-2xl font-bold mb-4">Embroidery</h3>
-            <p class="text-gray-400 mb-6">Precision embroidery for corporate wear, uniforms, and custom designs.</p>
-          </div>
-          <div class="card-premium glass rounded-2xl overflow-hidden group p-8 text-center">
-            <i class="fas fa-tshirt text-5xl text-[#f6c14e] mb-6 group-hover:scale-110"></i>
-            <h3 class="text-2xl font-bold mb-4">Printing</h3>
-            <p class="text-gray-400 mb-6">High-quality DTG and screen printing for events and merchandise.</p>
-          </div>
-          <div class="card-premium glass rounded-2xl overflow-hidden group p-8 text-center">
-            <i class="fas fa-tag text-5xl text-[#f6c14e] mb-6 group-hover:pulse"></i>
-            <h3 class="text-2xl font-bold mb-4">Labeling</h3>
-            <p class="text-gray-400 mb-6">Custom woven and printed labels for premium branding.</p>
-          </div>
+    <nav class="fixed top-0 w-full z-50 py-6 px-10 flex justify-between items-center glass">
+        <a href="#" class="text-2xl font-black tracking-tighter">
+            <span class="gold-text">CBC</span> CLASSIC BRAND
+        </a>
+        <div class="hidden md:flex gap-10 text-[10px] font-bold uppercase tracking-[0.2em]">
+            <a href="#services" class="hover:text-[#f6c14e] transition">Services</a>
+            <a href="#portfolio" class="hover:text-[#f6c14e] transition">Portfolio</a>
+            <a href="contact.html" class="bg-gold text-black px-6 py-2 rounded-sm magnetic-hover">Contact</a>
         </div>
-      </div>
-    </section>
+    </nav>
 
-    <!-- Portfolio -->
-    <section id="portfolio" class="py-32 px-6">
-      <div class="max-w-6xl mx-auto">
-        <h2 class="text-3xl font-bold mb-16 gold-glow tracking-widest uppercase">The Collection</h2>
-        <div class="grid md:grid-cols-3 gap-8">
-          <div class="card-premium bg-zinc-900 rounded-2xl overflow-hidden group">
-            <img src="./assets/img/portfolio/tshirt24.jpg" alt="Corporate Wear Embroidery Example"
-              class="w-full h-80 object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
-            <div class="p-6">
-              <span class="text-[#f6c14e] text-[10px] font-bold uppercase tracking-widest">Embroidery</span>
-              <h3 class="text-xl font-bold mt-2">Corporate Wear</h3>
-            </div>
-          </div>
-          <div class="card-premium bg-zinc-900 rounded-2xl overflow-hidden group">
-            <img src="./assets/img/portfolio/tshirt15.jpg" alt="Event Apparel Printing Example"
-              class="w-full h-80 object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
-            <div class="p-6">
-              <span class="text-[#f6c14e] text-[10px] font-bold uppercase tracking-widest">Printing</span>
-              <h3 class="text-xl font-bold mt-2">Event Apparel</h3>
-            </div>
-          </div>
-          <div class="card-premium bg-zinc-900 rounded-2xl overflow-hidden group">
-            <img src="./assets/img/portfolio/full-custom13.jpg" alt="Custom Branding Labeling Example"
-              class="w-full h-80 object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
-            <div class="p-6">
-              <span class="text-[#f6c14e] text-[10px] font-bold uppercase tracking-widest">Labeling</span>
-              <h3 class="text-xl font-bold mt-2">Custom Branding</h3>
-            </div>
-          </div>
+    <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-20">
+        <div class="absolute opacity-5 text-[20vw] font-black select-none z-0">CBC</div>
+        <h1 class="text-6xl md:text-9xl font-black tracking-tighter z-10">
+            QUALITY<br><span class="gold-text italic text-5xl md:text-8xl">REIMAGINED</span>
+        </h1>
+        <p class="max-w-xl text-gray-400 mt-8 text-lg z-10">
+            Matugga's premier center for embroidery, printing, and brand labeling.
+            We turn fabric into legacy.
+        </p>
+        <div class="mt-12 z-10">
+            <a href="#portfolio"
+                class="border border-white/20 px-10 py-4 text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition magnetic-hover reveal-on-scroll">View
+                Masterworks</a>
         </div>
-      </div>
     </section>
-  </main>
 
-  <div id="site-footer"></div>
+    <section id="services" class="py-32 px-10 max-w-7xl mx-auto reveal-on-scroll">
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="glass p-10 bento-item">
+                <span class="text-4xl font-black opacity-10 absolute right-6 top-6">01</span>
+                <h3 class="text-2xl font-bold gold-text mb-4">EMBROIDERY</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">High-precision stitching for corporate excellence and
+                    bespoke luxury apparel.</p>
+            </div>
+            <div class="glass p-10 bento-item">
+                <span class="text-4xl font-black opacity-10 absolute right-6 top-6">02</span>
+                <h3 class="text-2xl font-bold gold-text mb-4">PRINTING</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Vibrant DTG and screen printing solutions that capture
+                    every detail of your brand.</p>
+            </div>
+            <div class="glass p-10 bento-item">
+                <span class="text-4xl font-black opacity-10 absolute right-6 top-6">03</span>
+                <h3 class="text-2xl font-bold gold-text mb-4">LABELING</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">The final touch of DNA. Woven and printed labels for
+                    complete brand identity.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="py-20 px-10 max-w-7xl mx-auto reveal-on-scroll">
+        <h2 class="text-xs font-bold tracking-[0.5em] uppercase text-center mb-16 opacity-50">Obsidian Gallery</h2>
+        <div class="grid md:grid-cols-4 gap-4 auto-rows-[300px]">
+            <div class="md:col-span-2 glass bento-item group">
+                <img src="./img/portfolio/tshirt24.jpg"
+                    class="w-full h-full object-cover opacity-50 group-hover:opacity-100 transition duration-700">
+                <div class="absolute bottom-6 left-6">
+                    <p class="text-[10px] font-bold gold-text tracking-widest uppercase">Premium Wear</p>
+                    <h4 class="text-xl font-black">Corporate Embroidery</h4>
+                </div>
+            </div>
+            <div class="glass bento-item group">
+                <img src="./img/portfolio/tshirt15.jpg"
+                    class="w-full h-full object-cover opacity-50 group-hover:opacity-100 transition duration-700">
+                <div class="absolute bottom-6 left-6">
+                    <h4 class="text-lg font-black">DTG Printing</h4>
+                </div>
+            </div>
+            <div class="glass bento-item group">
+                <img src="./img/portfolio/full-custom13.jpg"
+                    class="w-full h-full object-cover opacity-50 group-hover:opacity-100 transition duration-700">
+                <div class="absolute bottom-6 left-6">
+                    <h4 class="text-lg font-black">Brand DNA</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-20 border-t border-white/5 px-10">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12 text-sm text-gray-500">
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase tracking-widest">Matugga Center</h4>
+                <p>Near Lwadda School, Matugga</p>
+                <p>+256 785 475 049</p>
+            </div>
+            <div class="text-center">
+                <h1 class="text-2xl font-black gold-text mb-2">CBC</h1>
+                <p>© 2026 CLASSIC BRAND CO.</p>
+            </div>
+            <div class="flex justify-end gap-6 text-xl">
+                <a href="#" class="hover:text-gold transition"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:text-gold transition"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
 
 </body>
 
