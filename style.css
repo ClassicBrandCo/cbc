@@ -1,15 +1,16 @@
 /* Elite Branding - Luxury CSS */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
 
-* { font-family: 'Inter', sans-serif; }
-
 :root {
-  --obsidian: #050505;
-  --gold: #f6c14e;
+    --obsidian: #050505;
+    --gold: #f6c14e;
+}
+
+* {
+    font-family: 'Inter', sans-serif;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
     background-color: #050505;
     color: white;
 }
@@ -44,7 +45,7 @@ body {
 }
 
 .gold-glow {
-  text-shadow: 0 0 30px var(--gold), 0 0 60px var(--gold), 0 0 90px var(--gold);
+    text-shadow: 0 0 30px var(--gold), 0 0 60px var(--gold), 0 0 90px var(--gold);
 }
 
 /* Pro Features */
@@ -58,8 +59,8 @@ body {
 }
 
 .reveal-on-scroll {
-    opacity: 0;
-    transform: translateY(30px);
+    opacity: 1;
+    transform: translateY(0);
     transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
