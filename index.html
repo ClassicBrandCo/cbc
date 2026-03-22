@@ -40,6 +40,21 @@
         </div>
     </nav>
 
+    <!-- Mobile menu button (add inside nav) -->
+<button id="mobileMenuBtn" class="md:hidden text-2xl gold-text">
+    <i class="fas fa-bars"></i>
+</button>
+
+<!-- Mobile menu (add after nav closes) -->
+<div id="mobileMenu" class="fixed inset-0 z-40 bg-black/95 backdrop-blur-xl hidden md:hidden">
+    <div class="flex flex-col items-center justify-center h-full gap-8 text-2xl">
+        <a href="index.html" class="hover:text-gold">Home</a>
+        <a href="index.html#services" class="hover:text-gold">Services</a>
+        <a href="portfolio.html" class="hover:text-gold">Portfolio</a>
+        <a href="contact.html" class="hover:text-gold">Contact</a>
+    </div>
+</div>
+
     <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-20">
         <div class="absolute opacity-5 text-[20vw] font-black select-none z-0">CBC</div>
         <h1 class="text-6xl md:text-9xl font-black tracking-tighter z-10">
