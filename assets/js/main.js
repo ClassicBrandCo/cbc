@@ -181,3 +181,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', throttledScroll, { passive: true });
 });
+// Mobile menu toggle
+const menuBtn = document.getElementById('mobileMenuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+
+if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        const icon = menuBtn.querySelector('i');
+        icon.classList.toggle('fa-bars');
+        icon.classList.toggle('fa-times');
+    });
+}
