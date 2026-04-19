@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Future Fiction: Independent music label pushing the boundaries of electronic, alternative, and experimental sound.">
+    <meta name="keywords" content="music label, electronic music, independent label, Future Fiction, artist collective, releases, events">
+    <meta name="author" content="Future Fiction">
+    <meta name="theme-color" content="#00ffff">
+    <title>Future Fiction | Future Sounds, Today</title>
+    <!-- Tailwind & Fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+    <!-- Custom Styles -->
+    <style>
+        /* Custom styling for cyberpunk-ish accents & animations */
+        body {
+            background-color: #050505;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+        }
+        .neon-text {
+            text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+        }
+        .neon-border {
+            box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+        }
+        .glass {
+            background: rgba(20, 20, 20, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .bento-item {
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+        }
+        .bento-item:hover {
+            border-color: #00ffff;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+            transform: translateY(-5px);
+        }
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .reveal-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Preloader */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #00ffff;
+            font-size: 2rem;
+            font-weight: 900;
+        }
+        /* Magnetic hover effect */
+        .magnetic-hover {
+            transition: transform 0.2s ease;
+        }
+        /* Latest releases grid */
+        .release-card {
+            position: relative;
+            overflow: hidden;
+        }
+        .release-card img {
+            transition: transform 0.6s ease;
+        }
+        .release-card:hover img {
+            transform: scale(1.05);
+        }
+        /* Custom accent color overrides */
+        .bg-cyan { background-color: #00ffff; }
+        .text-cyan { color: #00ffff; }
+        .border-cyan { border-color: #00ffff; }
+        .hover\:bg-cyan:hover { background-color: #00ffff; }
+        .hover\:text-black:hover { color: #000; }
+    </style>
+</head>
+<body class="bg-black text-white">
+
+    <!-- Preloader -->
+    <div id="preloader">FUTURE FICTION // LOADING...</div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 py-6 px-10 flex justify-between items-center glass">
+        <a href="#" class="text-2xl font-black tracking-tighter">
+            <span class="text-cyan neon-text">FF</span> FUTURE FICTION
+        </a>
+        <div class="hidden md:flex gap-10 text-[10px] font-bold uppercase tracking-[0.2em]">
+            <a href="#artists" class="hover:text-cyan transition">Artists</a>
+            <a href="#releases" class="hover:text-cyan transition">Releases</a>
+            <a href="#events" class="hover:text-cyan transition">Events</a>
+            <a href="contact.html" class="bg-cyan text-black px-6 py-2 rounded-sm magnetic-hover">Contact</a>
+        </div>
+        <!-- Mobile menu button -->
+        <button id="mobileMenuBtn" class="md:hidden text-2xl text-cyan">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="fixed inset-0 z-40 bg-black/95 backdrop-blur-xl hidden md:hidden">
+        <div class="flex flex-col items-center justify-center h-full gap-8 text-2xl">
+            <a href="#" class="hover:text-cyan">Home</a>
+            <a href="#artists" class="hover:text-cyan">Artists</a>
+            <a href="#releases" class="hover:text-cyan">Releases</a>
+            <a href="#events" class="hover:text-cyan">Events</a>
+            <a href="contact.html" class="hover:text-cyan">Contact</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-20">
+        <div class="absolute opacity-5 text-[20vw] font-black select-none z-0">FF</div>
+        <h1 class="text-6xl md:text-9xl font-black tracking-tighter z-10">
+            FUTURE<br><span class="text-cyan italic text-5xl md:text-8xl">FICTION</span>
+        </h1>
+        <p class="max-w-xl text-gray-400 mt-8 text-lg z-10">
+            Independent music label pushing the boundaries of electronic, alternative, and experimental sound.
+        </p>
+        <div class="mt-12 z-10 flex gap-6">
+            <a href="#releases" class="border border-cyan/50 px-10 py-4 text-xs font-bold uppercase tracking-widest hover:bg-cyan hover:text-black transition magnetic-hover">Listen Now</a>
+            <a href="#artists" class="border border-white/20 px-10 py-4 text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition magnetic-hover">Discover Artists</a>
+        </div>
+    </section>
+
+    <!-- Our Offerings (Services) -->
+    <section id="offerings" class="py-32 px-10 max-w-7xl mx-auto reveal-on-scroll">
+        <h2 class="text-xs font-bold tracking-[0.5em] uppercase text-center mb-16 opacity-50">What We Do</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <!-- Offering 1 -->
+            <div class="glass p-10 bento-item relative">
+                <span class="text-4xl font-black opacity-10 absolute right-6 top-6">01</span>
+                <div class="text-center mb-6">
+                    <span class="text-6xl text-cyan opacity-60"><i class="fas fa-user-astronaut"></i></span>
+                </div>
+                <h3 class="text-2xl font-bold text-cyan mb-4">Artist Development</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">We nurture raw talent, providing production, mentorship, and a platform to launch unique voices into the global scene.</p>
+            </div>
+            <!-- Offering 2 -->
+            <div class="glass p-10 bento-item relative">
+                <span class="text-4xl font-black opacity-10 absolute right-6 top-6">02</span>
+                <div class="text-center mb-6">
+                    <span class="text-6xl text-cyan opacity-60"><i class="fas fa-compact-disc"></i></span>
+                </div>
+                <h3 class="text-2xl font-bold text-cyan mb-4">Distribution & Sync</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Worldwide digital distribution, vinyl pressings, and sync licensing to get your music heard everywhere.</p>
+            </div>
+            <!-- Offering 3 -->
+            <div class="glass p-10 bento-item relative">
+                <span class="text-4xl font-black opacity-10 absolute right-6 top-6">03</span>
+                <div class="text-center mb-6">
+                    <span class="text-6xl text-cyan opacity-60"><i class="fas fa-calendar-alt"></i></span>
+                </div>
+                <h3 class="text-2xl font-bold text-cyan mb-4">Event Curation</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Immersive live experiences, showcases, and club nights that bring the Future Fiction sound to life.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- The FF Approach (Process) -->
+    <section class="py-20 px-10 max-w-7xl mx-auto border-t border-white/5">
+        <h2 class="text-center text-[10px] tracking-[0.4em] uppercase opacity-40 mb-16">The FF Approach</h2>
+        <div class="grid md:grid-cols-3 gap-12">
+            <div class="text-center">
+                <div class="text-6xl text-cyan opacity-60 mb-4">
+                    <i class="fas fa-headphones"></i>
+                </div>
+                <div class="text-4xl font-black text-cyan mb-4">01</div>
+                <h4 class="font-bold mb-2">Discovery</h4>
+                <p class="text-xs text-gray-500">We find unique sounds and collaborate to define a distinct artistic vision.</p>
+            </div>
+            <div class="text-center">
+                <div class="text-6xl text-cyan opacity-60 mb-4">
+                    <i class="fas fa-microchip"></i>
+                </div>
+                <div class="text-4xl font-black text-cyan mb-4">02</div>
+                <h4 class="font-bold mb-2">Production</h4>
+                <p class="text-xs text-gray-500">State-of-the-art studio sessions, mixing, and mastering to craft a signature sonic identity.</p>
+            </div>
+            <div class="text-center">
+                <div class="text-6xl text-cyan opacity-60 mb-4">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <div class="text-4xl font-black text-cyan mb-4">03</div>
+                <h4 class="font-bold mb-2">Launch</h4>
+                <p class="text-xs text-gray-500">Strategic release campaigns, playlist pitching, and live shows to make an impact.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Releases (Portfolio) -->
+    <section id="releases" class="py-20 px-10 max-w-7xl mx-auto reveal-on-scroll">
+        <h2 class="text-xs font-bold tracking-[0.5em] uppercase text-center mb-16 opacity-50">Latest Releases</h2>
+        <div class="grid md:grid-cols-4 gap-4 auto-rows-[300px]">
+            <!-- Release 1 -->
+            <div class="md:col-span-2 glass bento-item group">
+                <img src="https://placehold.co/600x400/111/00ffff?text=NOVA+-+Neon+Dreams+EP"
+                     class="w-full h-full object-cover opacity-50 group-hover:opacity-100 transition duration-700"
+                     alt="NOVA - Neon Dreams EP">
+                <div class="absolute bottom-6 left-6">
+                    <p class="text-[10px] font-bold text-cyan tracking-widest uppercase">EP</p>
+                    <h4 class="text-xl font-black">NOVA – Neon Dreams</h4>
+                </div>
+            </div>
+            <!-- Release 2 -->
+            <div class="glass bento-item group">
+                <img src="https://placehold.co/400x400/111/ff00ff?text=ECHOGRAPH+-+Signal+Lost"
+                     class="w-full h-full object-cover opacity-50 group-hover:opacity-100 transition duration-700"
+                     alt="ECHOGRAPH - Signal Lost">
+                <div class="absolute bottom-6 left-6">
+                    <h4 class="text-lg font-black">ECHOGRAPH – Signal Lost</h4>
+                </div>
+            </div>
+            <!-- Release 3 -->
+            <div class="glass bento-item group">
+                <img src="https://placehold.co/400x400/111/00ffff?text=VA+-+Future+Fiction+Vol.1"
+                     class="w-full h-full object-cover opacity-50 group-hover:opacity-100 transition duration-700"
+                     alt="VA - Future Fiction Vol.1">
+                <div class="absolute bottom-6 left-6">
+                    <h4 class="text-lg font-black">VA – Future Fiction Vol.1</h4>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-12">
+            <a href="#" class="border border-cyan/50 px-8 py-3 text-xs font-bold uppercase tracking-widest hover:bg-cyan hover:text-black transition">View All Releases</a>
+        </div>
+    </section>
+
+    <!-- Artists Roster (new section) -->
+    <section id="artists" class="py-20 px-10 max-w-7xl mx-auto border-t border-white/5 reveal-on-scroll">
+        <h2 class="text-xs font-bold tracking-[0.5em] uppercase text-center mb-16 opacity-50">Our Artists</h2>
+        <div class="grid md:grid-cols-4 gap-6">
+            <div class="glass p-6 bento-item text-center">
+                <img src="https://placehold.co/200x200/222/00ffff?text=NOVA" class="w-32 h-32 rounded-full mx-auto mb-4 border-2 border-cyan" alt="NOVA">
+                <h4 class="text-xl font-bold text-cyan">NOVA</h4>
+                <p class="text-xs text-gray-400">Electronic / Synthwave</p>
+            </div>
+            <div class="glass p-6 bento-item text-center">
+                <img src="https://placehold.co/200x200/222/ff00ff?text=ECHOGRAPH" class="w-32 h-32 rounded-full mx-auto mb-4 border-2 border-cyan" alt="ECHOGRAPH">
+                <h4 class="text-xl font-bold text-cyan">ECHOGRAPH</h4>
+                <p class="text-xs text-gray-400">Experimental / Ambient</p>
+            </div>
+            <div class="glass p-6 bento-item text-center">
+                <img src="https://placehold.co/200x200/222/00ffff?text=LYRA" class="w-32 h-32 rounded-full mx-auto mb-4 border-2 border-cyan" alt="LYRA">
+                <h4 class="text-xl font-bold text-cyan">LYRA</h4>
+                <p class="text-xs text-gray-400">Alternative / Dreampop</p>
+            </div>
+            <div class="glass p-6 bento-item text-center">
+                <img src="https://placehold.co/200x200/222/ff00ff?text=VECTOR-7" class="w-32 h-32 rounded-full mx-auto mb-4 border-2 border-cyan" alt="VECTOR-7">
+                <h4 class="text-xl font-bold text-cyan">VECTOR-7</h4>
+                <p class="text-xs text-gray-400">Techno / Industrial</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events (new section) -->
+    <section id="events" class="py-20 px-10 max-w-7xl mx-auto reveal-on-scroll">
+        <h2 class="text-xs font-bold tracking-[0.5em] uppercase text-center mb-16 opacity-50">Upcoming Events</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="glass p-8 bento-item flex gap-6 items-center">
+                <div class="text-4xl font-black text-cyan">18<br><span class="text-xs">APR</span></div>
+                <div>
+                    <h4 class="text-xl font-bold">Future Fiction Showcase</h4>
+                    <p class="text-sm text-gray-400">The Echo, Los Angeles</p>
+                    <p class="text-xs text-cyan mt-2">Feat. NOVA, LYRA</p>
+                </div>
+                <a href="#" class="ml-auto text-cyan"><i class="fas fa-ticket-alt"></i></a>
+            </div>
+            <div class="glass p-8 bento-item flex gap-6 items-center">
+                <div class="text-4xl font-black text-cyan">25<br><span class="text-xs">APR</span></div>
+                <div>
+                    <h4 class="text-xl font-bold">Neon Nights w/ ECHOGRAPH</h4>
+                    <p class="text-sm text-gray-400">Elsewhere, Brooklyn</p>
+                    <p class="text-xs text-cyan mt-2">Live AV Set</p>
+                </div>
+                <a href="#" class="ml-auto text-cyan"><i class="fas fa-ticket-alt"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 border-t border-white/5 px-10">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12 text-sm text-gray-500">
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase tracking-widest">Future Fiction HQ</h4>
+                <p>Berlin / Los Angeles / Tokyo</p>
+                <p>info@futurefiction.audio</p>
+            </div>
+            <div class="text-center">
+                <h1 class="text-2xl font-black text-cyan mb-2">FF</h1>
+                <p>© 2026 FUTURE FICTION</p>
+            </div>
+            <div class="flex justify-end gap-6 text-xl">
+                <a href="#" class="hover:text-cyan transition"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:text-cyan transition"><i class="fab fa-soundcloud"></i></a>
+                <a href="#" class="hover:text-cyan transition"><i class="fab fa-bandcamp"></i></a>
+                <a href="#" class="hover:text-cyan transition"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp / Contact float (can be changed to something else) -->
+    <a href="#" class="fixed bottom-8 right-8 bg-cyan text-black p-4 rounded-full shadow-2xl z-[100] hover:scale-110 transition-transform flex items-center justify-center">
+        <i class="fab fa-discord text-3xl"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script>
+        // Preloader
+        window.addEventListener('load', function() {
+            const preloader = document.getElementById('preloader');
+            gsap.to(preloader, {
+                opacity: 0,
+                duration: 1,
+                onComplete: function() {
+                    preloader.style.display = 'none';
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        if (mobileBtn) {
+            mobileBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Scroll reveal
+        const reveals = document.querySelectorAll('.reveal-on-scroll');
+        function checkReveal() {
+            for (let el of reveals) {
+                const windowHeight = window.innerHeight;
+                const elementTop = el.getBoundingClientRect().top;
+                const elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    el.classList.add('visible');
+                }
+            }
+        }
+        window.addEventListener('scroll', checkReveal);
+        window.addEventListener('resize', checkReveal);
+        checkReveal();
+
+        // Magnetic hover effect (basic)
+        const magnets = document.querySelectorAll('.magnetic-hover');
+        magnets.forEach(magnet => {
+            magnet.addEventListener('mousemove', function(e) {
+                const rect = this.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                gsap.to(this, {
+                    x: x * 0.3,
+                    y: y * 0.3,
+                    duration: 0.3
+                });
+            });
+            magnet.addEventListener('mouseleave', function() {
+                gsap.to(this, {
+                    x: 0,
+                    y: 0,
+                    duration: 0.3
+                });
+            });
+        });
+    </script>
+
+    <!-- Additional custom styles for neon etc -->
+    <style>
+        /* For any extra neon or glitch effects */
+        .neon-text {
+            text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+        }
+        .glass {
+            background: rgba(20, 20, 20, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .bento-item {
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+        }
+        .bento-item:hover {
+            border-color: #00ffff;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+            transform: translateY(-5px);
+        }
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .reveal-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+
+</body>
+</html>
